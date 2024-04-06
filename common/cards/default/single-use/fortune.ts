@@ -23,9 +23,10 @@ class FortuneSingleUseCard extends SingleUseCard {
 
 		player.hooks.onApply.add(instance, () => {
 			player.hooks.onCoinFlip.add(instance, (id, coinFlips) => {
-				for (let i = 0; i < coinFlips.length; i++) {
-					coinFlips[i] = 'heads'
-				}
+				coinFlips[0] = 'heads'
+
+				player.hooks.onCoinFlip.remove(instance)
+
 				return coinFlips
 			})
 
