@@ -14,14 +14,14 @@ import {Hermit} from '../../types'
 const DungeonTangoRare: Hermit = {
 	...hermit,
 	id: 'dungeontango_rare',
-	numericId: 208,
+	numericId: 445,
 	name: 'DM tango',
 	expansion: 'advent_of_tcg',
 	palette: 'advent_of_tcg',
 	background: 'advent_of_tcg',
 	rarity: 'rare',
 	tokens: 2,
-	type: 'miner',
+	type: ['miner'],
 	health: 280,
 	primary: {
 		name: 'Lackey',

@@ -4,14 +4,14 @@ import {Item} from '../../types'
 const WildDoubleItem: Item = {
 	...item,
 	id: 'item_any_rare',
-	numericId: 241,
+	numericId: 0.101,
 	name: 'Wild Item x2',
 	description: 'Counts as 2 Wild Item cards.',
 	shortName: 'Wild',
 	expansion: 'advent_of_tcg',
 	rarity: 'rare',
 	tokens: 4,
-	type: 'any',
+	type: ['any'],
 	energy: ['any', 'any'],
 }
 

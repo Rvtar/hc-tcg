@@ -1,6 +1,6 @@
-import {CARDS, CARDS_LIST} from 'common/cards'
-import {getCardTypeIcon, getRankIcon} from 'common/cards/card'
-import {getRenderedCardImage} from 'common/cards/card'
+import { CARDS, CARDS_LIST } from 'common/cards'
+import { getCardTypeIcon, getRankIcon } from 'common/cards/card'
+import {getCardImage, getHermitBackground} from 'common/cards/card'
 import {Card, isAttach, isHermit, isItem, isSingleUse} from 'common/cards/types'
 import {getDeckFromHash} from 'common/utils/import-export'
 import {getCardVisualTokenCost, getDeckCost} from 'common/utils/ranks'
@@ -18,7 +18,7 @@ type HermitResponse = {
 	expansion: string
 	rarity: string
 	tokens: number
-	type: string
+	type: string[] | null
 	health: number
 	primary: {
 		cost: Array<string>
@@ -31,10 +31,9 @@ type HermitResponse = {
 		damage: number
 		power: string | null
 	}
-	images: {
-		default: string
-		'with-token-cost': string
-	}
+	image: string
+	background: string
+	palette?: string
 }
 
 type EffectResponse = {
@@ -45,10 +44,7 @@ type EffectResponse = {
 	rarity: string
 	tokens: number
 	description: string
-	images: {
-		default: string
-		'with-token-cost': string
-	}
+	image: string
 }
 
 type ItemResponse = {
@@ -59,10 +55,7 @@ type ItemResponse = {
 	rarity: string
 	tokens: number
 	energy: Array<string>
-	images: {
-		default: string
-		'with-token-cost': string
-	}
+	image: string
 }
 
 function cardToCardResponse(card: Card, url: string): CardResponse | null {
@@ -79,13 +72,9 @@ function cardToCardResponse(card: Card, url: string): CardResponse | null {
 			health: card.health,
 			primary: card.primary,
 			secondary: card.secondary,
-			images: {
-				default: joinUrl(url, getRenderedCardImage(card, false, 'png')),
-				'with-token-cost': joinUrl(
-					url,
-					getRenderedCardImage(card, true, 'png'),
-				),
-			},
+			image: joinUrl(url, getCardImage(card)),
+			background: joinUrl(url, getHermitBackground(card)),
+			palette: card.palette,
 		}
 	} else if (isSingleUse(card) || isAttach(card)) {
 		return {
@@ -96,13 +85,7 @@ function cardToCardResponse(card: Card, url: string): CardResponse | null {
 			rarity: card.rarity,
 			tokens: getCardVisualTokenCost(card.tokens),
 			description: card.description,
-			images: {
-				default: joinUrl(url, getRenderedCardImage(card, false, 'png')),
-				'with-token-cost': joinUrl(
-					url,
-					getRenderedCardImage(card, true, 'png'),
-				),
-			},
+			image: joinUrl(url, getCardImage(card)),
 		}
 	} else if (isItem(card)) {
 		return {
@@ -113,13 +96,7 @@ function cardToCardResponse(card: Card, url: string): CardResponse | null {
 			rarity: card.rarity,
 			tokens: getCardVisualTokenCost(card.tokens),
 			energy: card.energy,
-			images: {
-				default: joinUrl(url, getRenderedCardImage(card, false, 'png')),
-				'with-token-cost': joinUrl(
-					url,
-					getRenderedCardImage(card, true, 'png'),
-				),
-			},
+			image: joinUrl(url, getCardImage(card)),
 		}
 	}
 	return null
@@ -171,6 +148,7 @@ export function deckCost(body: Object) {
 		cost: getDeckCost(cards.map((card) => CARDS[card])),
 	}
 }
+
 export function types(url: string) {
 	return [
 		{
@@ -219,7 +197,6 @@ export function types(url: string) {
 		},
 	]
 }
-
 export function ranks(url: string) {
 	return [
 		{

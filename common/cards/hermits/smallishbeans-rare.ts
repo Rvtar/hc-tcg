@@ -11,12 +11,12 @@ import SmallishbeansCommon from './smallishbeans-common'
 const SmallishbeansRare: Hermit = {
 	...hermit,
 	id: 'smallishbeans_rare',
-	numericId: 161,
+	numericId: 0,
 	name: 'Joel',
 	expansion: 'season_x',
 	rarity: 'rare',
 	tokens: 2,
-	type: 'explorer',
+	type: ['explorer'],
 	health: 260,
 	primary: {
 		name: 'Neck Kisses',

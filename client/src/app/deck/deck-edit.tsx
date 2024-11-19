@@ -27,19 +27,40 @@ import {cardGroupHeader} from './deck'
 import css from './deck.module.scss'
 import DeckLayout from './layout'
 
-const RANK_NAMES = ['any', 'stone', 'iron', 'gold', 'emerald', 'diamond']
+const RANK_NAMES = [
+	'any',
+	'stone',
+	'iron',
+	'gold',
+	'emerald',
+	'diamond',
+	'obsidian',
+]
 const DECK_ICONS = [
 	'any',
+	'anarchist',
+	'athlete',
 	'balanced',
+	'bard',
 	'builder',
+	'challenger',
+	'collector',
+	'diplomat',
 	'explorer',
 	'farm',
+	'historian',
+	'inventor',
+	'looper',
 	'miner',
+	'pacifist',
 	'prankster',
 	'pvp',
 	'redstone',
+	'scavenger',
 	'speedrunner',
 	'terraform',
+	'mob',
+	'everything',
 ]
 
 const EXPANSION_NAMES = [
@@ -150,6 +171,7 @@ const TYPE_ORDER = {
 	hermit: 0,
 	attach: 1,
 	single_use: 2,
+	useless: 2,
 	item: 3,
 	health: 4,
 }
@@ -159,6 +181,8 @@ const RARITY_ORDER = {
 	common: 0,
 	rare: 1,
 	ultra_rare: 1,
+	mythic: 1,
+	NA: 2,
 }
 
 export function sortCards(
@@ -170,7 +194,9 @@ export function sortCards(
 				TYPE_ORDER[a.props.category] - TYPE_ORDER[b.props.category],
 				isHermit(a.props) &&
 					isHermit(b.props) &&
-					a.props.type.localeCompare(b.props.type),
+					a.props.type &&
+					b.props.type &&
+					a.props.type[0].localeCompare(b.props.type[0]),
 				isItem(a.props) &&
 					isItem(b.props) &&
 					a.props.name.localeCompare(b.props.name),
@@ -295,7 +321,8 @@ function EditDeck({
 				(typeQuery === '' ||
 					!(isHermit(card.props) || isItem(card.props)) ||
 					((isHermit(card.props) || isItem(card.props)) &&
-						card.props.type.includes(typeQuery))) &&
+						card.props.type &&
+						card.props.type[0].includes(typeQuery))) &&
 				// Card Expansion Filter
 				(expansionQuery === '' || card.props.expansion === expansionQuery) &&
 				// Don't show disabled cards
