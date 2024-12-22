@@ -121,8 +121,6 @@ export function executeExtraAttacks(
 	game.battleLog.sendLogs()
 }
 
-// Things not directly related to the attack loop
-
 export function hasEnoughEnergy(
 	energy: Array<TypeT>,
 	cost: Array<TypeT>,
