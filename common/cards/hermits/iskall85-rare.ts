@@ -7,12 +7,12 @@ import {Hermit} from '../types'
 const Iskall85Rare: Hermit = {
 	...hermit,
 	id: 'iskall85_rare',
-	numericId: 48,
+	numericId: 26,
 	name: 'Iskall',
 	expansion: 'default',
 	rarity: 'rare',
 	tokens: 0,
-	type: 'farm',
+	type: ['farm'],
 	health: 290,
 	primary: {
 		name: 'Of Doom',
@@ -38,11 +38,13 @@ const Iskall85Rare: Hermit = {
 				if (!attack.isAttacker(component.entity) || attack.type !== 'secondary')
 					return
 
-				const hermit = attack.target?.getHermit()
-				if (!hermit) return
-				if (!hermit.isHermit() || hermit.props.type !== 'builder') return
-
-				attack.multiplyDamage(component.entity, 2)
+				const targetHermit = attack.target?.getHermit()
+				if (
+					targetHermit?.isHermit() &&
+					targetHermit.props.type &&
+					targetHermit.props.type.includes('builder')
+				)
+					attack.multiplyDamage(component.entity, 2)
 			},
 		)
 	},

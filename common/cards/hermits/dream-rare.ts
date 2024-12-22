@@ -6,10 +6,10 @@ const DreamRare: Hermit = {
 	id: 'dream_rare',
 	numericId: 117,
 	name: 'Dream',
-	expansion: 'dream',
+	expansion: 'hc_plus',
 	rarity: 'rare',
 	tokens: 0,
-	type: 'speedrunner',
+	type: ['speedrunner'],
 	health: 290,
 	primary: {
 		name: "C'mere",

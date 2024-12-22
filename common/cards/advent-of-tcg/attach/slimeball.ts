@@ -8,7 +8,7 @@ import {Attach} from '../../types'
 const Slimeball: Attach = {
 	...attach,
 	id: 'slimeball',
-	numericId: 204,
+	numericId: 511,
 	name: 'Slimeball',
 	rarity: 'rare',
 	tokens: 0,

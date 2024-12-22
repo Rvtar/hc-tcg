@@ -1,6 +1,6 @@
-import {CARDS, CARDS_LIST} from 'common/cards'
-import {getCardTypeIcon, getRankIcon} from 'common/cards/card'
-import {getRenderedCardImage} from 'common/cards/card'
+import { CARDS, CARDS_LIST } from 'common/cards'
+import { getCardTypeIcon, getRankIcon } from 'common/cards/card'
+import {getCardImage, getHermitBackground} from 'common/cards/card'
 import {Card, isAttach, isHermit, isItem, isSingleUse} from 'common/cards/types'
 import {GLOSSARY} from 'common/glossary'
 import {STATUS_EFFECTS} from 'common/status-effects'
@@ -20,7 +20,7 @@ type HermitResponse = {
 	expansion: string
 	rarity: string
 	tokens: number
-	type: string
+	type: string[] | null
 	health: number
 	primary: {
 		cost: Array<string>
@@ -63,10 +63,7 @@ type ItemResponse = {
 	rarity: string
 	tokens: number
 	energy: Array<string>
-	images: {
-		default: string
-		'with-token-cost': string
-	}
+	image: string
 }
 
 function getSidebarDescriptions(
@@ -227,6 +224,7 @@ export function deckCost(body: Object) {
 		cost: getDeckCost(cards.map((card) => CARDS[card])),
 	}
 }
+
 export function types(url: string) {
 	return [
 		{
@@ -275,7 +273,6 @@ export function types(url: string) {
 		},
 	]
 }
-
 export function ranks(url: string) {
 	return [
 		{
