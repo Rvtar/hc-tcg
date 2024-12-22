@@ -8,6 +8,8 @@ import {GameModel} from '../models/game-model'
 import {TypeT} from '../types/cards'
 import {afterAttack, onTurnEnd} from '../types/priorities'
 
+console.log('apprentice')
+
 /**
  * Call before attack hooks for each attack that has an attacker
  */
