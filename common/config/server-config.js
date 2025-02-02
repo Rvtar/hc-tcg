@@ -1,9 +1,9 @@
 export default {
 	port: 9000,
-	clientDevPort: 3002,
+	clientDevPort: 4002,
 	clientPath: 'client/dist',
 	cors: [
-		'http://localhost:3002',
+		'http://localhost:4002',
 		'https://hc-tcg-beta.fly.dev',
 		'https://hc-tcg-testing.fly.dev',
 		'https://hc-tcg.online',
@@ -20,5 +20,5 @@ export default {
 		bannedCards: ['evilxisuma_boss', 'feather', 'item_any_rare'],
 		disabledCards: ['iskallman_common', 'iskallman_rare'],
 	},
-	logoSubText: 'We nerfed Mumbo!',
+	logoSubText: 'Scuffed!',
 }

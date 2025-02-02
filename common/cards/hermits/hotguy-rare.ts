@@ -9,14 +9,14 @@ import {Hermit} from '../types'
 const HotguyRare: Hermit = {
 	...hermit,
 	id: 'hotguy_rare',
-	numericId: 131,
+	numericId: 103,
 	name: 'Hotguy',
 	expansion: 'alter_egos',
 	palette: 'alter_egos',
 	background: 'alter_egos',
 	rarity: 'rare',
 	tokens: 2,
-	type: 'explorer',
+	type: ['explorer'],
 	health: 280,
 	primary: {
 		name: 'Velocité',
@@ -29,7 +29,7 @@ const HotguyRare: Hermit = {
 		cost: ['explorer', 'explorer'],
 		damage: 80,
 		power:
-			'When used with a Bow or Crossbow effect card, effect card damage is doubles.',
+			'When used with a Bow or Crossbow effect card, effect card damage is doubled.',
 	},
 	onAttach(
 		game: GameModel,
