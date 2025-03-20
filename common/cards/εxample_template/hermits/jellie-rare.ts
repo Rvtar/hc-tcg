@@ -5,7 +5,7 @@ import {
 } from '../../../components'
 import query from '../../../components/query'
 import {GameModel} from '../../../models/game-model'
-import {afterAttack, beforeAttack} from '../../../types/priorities'
+import {beforeAttack} from '../../../types/priorities'
 import {hermit} from '../../defaults'
 import {Hermit} from '../../types'
 
@@ -35,8 +35,7 @@ const JellieRare: Hermit = {
 		name: 'Comfort',
 		cost: ['prankster', 'prankster'],
 		damage: 0,
-		power:
-			'Heal an AFK Hermit for 100 HP.\nHeal Scar cards an extra 50 HP.',
+		power: 'Heal an AFK Hermit for 100 HP.\nHeal Scar cards an extra 50 HP.',
 	},
 	onAttach(
 		game: GameModel,
@@ -88,14 +87,13 @@ const JellieRare: Hermit = {
 
 				let hermit = pickedAfkSlot.row.getHermit()
 				let amount = hermit?.props.name === 'Scar' ? 150 : 100
-				
 
 				pickedAfkSlot.row.heal(amount)
-				
 
 				game.battleLog.addEntry(
 					player.entity,
-					`$p${hermit?.props.name} (${pickedAfkSlot.row.index + 1})$ was healed $g${amount}hp$ by $p${hermit?.props.name
+					`$p${hermit?.props.name} (${pickedAfkSlot.row.index + 1})$ was healed $g${amount}hp$ by $p${
+						hermit?.props.name
 					}$`,
 				)
 			},
