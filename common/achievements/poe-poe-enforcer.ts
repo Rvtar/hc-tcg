@@ -52,7 +52,7 @@ const PoePoeEnforcer: Achievement = {
 			onTurnEnd.BEFORE_STATUS_EFFECT_TIMEOUT,
 			() => {
 				deadTargets = []
-			}
+			},
 		)
 
 		observer.subscribeWithPriority(

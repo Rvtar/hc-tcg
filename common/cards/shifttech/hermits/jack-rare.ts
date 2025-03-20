@@ -1,15 +1,14 @@
 import {
 	CardComponent,
 	ObserverComponent,
-	SlotComponent,
 	StatusEffectComponent,
 } from '../../../components'
 import query from '../../../components/query'
 import {GameModel} from '../../../models/game-model'
+import DoubleItemPlayedEffect from '../../../status-effects/double-item-played'
 import {afterAttack} from '../../../types/priorities'
 import {flipCoin} from '../../../utils/coinFlips'
 import {hermit} from '../../defaults'
-import {Hermit} from '../../types'
 import AnarchistDoubleItem from '../../items/anarchist-rare'
 import AthleteDoubleItem from '../../items/athlete-rare'
 import BalancedDoubleItem from '../../items/balanced-rare'
@@ -31,7 +30,7 @@ import RedstoneDoubleItem from '../../items/redstone-rare'
 import ScavengerDoubleItem from '../../items/scavenger-rare'
 import SpeedrunnerDoubleItem from '../../items/speedrunner-rare'
 import TerraformDoubleItem from '../../items/terraform-rare'
-import DoubleItemPlayedEffect from '../../../status-effects/double-item-played'
+import {Hermit} from '../../types'
 
 const JackRare: Hermit = {
 	...hermit,
@@ -53,7 +52,8 @@ const JackRare: Hermit = {
 		name: 'Rebuild',
 		cost: ['builder', 'builder', 'any'],
 		damage: 90,
-		power: 'Flip a coin.\nIf heads, you can play an additional item card this turn.\nIf you use a Double Item card, you cannot use an additional item card, regardless of the coin flip result.\nYou cannot use a Double Item card as the second item card.',
+		power:
+			'Flip a coin.\nIf heads, you can play an additional item card this turn.\nIf you use a Double Item card, you cannot use an additional item card, regardless of the coin flip result.\nYou cannot use a Double Item card as the second item card.',
 	},
 	onAttach(
 		game: GameModel,
@@ -62,32 +62,23 @@ const JackRare: Hermit = {
 	) {
 		const {player} = component
 
-		observer.subscribe(
-			player.hooks.onAttach,
-			(card) => {
-				if (card.isItem() &&
-					card.props.energy.length == 2 &&
-					card.player == player &&
-					!game.components.exists(
-						StatusEffectComponent,
-						query.effect.is(DoubleItemPlayedEffect),
-						query.effect.targetIsPlayerAnd(query.player.entity(player.entity)),
-					) &&
-					query.every(query.card.active, query.card.is(JackRare))(
-						game,
-						component,
-					)
-				) {
-					game.components
-						.new(
-							StatusEffectComponent,
-							DoubleItemPlayedEffect,
-							component.entity,
-						)
-						.apply(player.entity)
-				}
+		observer.subscribe(player.hooks.onAttach, (card) => {
+			if (
+				card.isItem() &&
+				card.props.energy.length == 2 &&
+				card.player == player &&
+				!game.components.exists(
+					StatusEffectComponent,
+					query.effect.is(DoubleItemPlayedEffect),
+					query.effect.targetIsPlayerAnd(query.player.entity(player.entity)),
+				) &&
+				query.every(query.card.active, query.card.is(JackRare))(game, component)
+			) {
+				game.components
+					.new(StatusEffectComponent, DoubleItemPlayedEffect, component.entity)
+					.apply(player.entity)
 			}
-		)
+		})
 
 		observer.subscribeWithPriority(
 			game.hooks.afterAttack,
@@ -110,7 +101,7 @@ const JackRare: Hermit = {
 
 				if (coinFlip[0] === 'heads') {
 					game.removeCompletedActions('PLAY_ITEM_CARD')
-					game.removeBlockedActions('game', 'PLAY_ITEM_CARD',)
+					game.removeBlockedActions('game', 'PLAY_ITEM_CARD')
 
 					observer.subscribe(game.hooks.freezeSlots, () => {
 						return query.every(
@@ -138,7 +129,7 @@ const JackRare: Hermit = {
 								ScavengerDoubleItem,
 								SpeedrunnerDoubleItem,
 								TerraformDoubleItem,
-							)
+							),
 						)
 					})
 				}

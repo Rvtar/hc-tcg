@@ -1,7 +1,6 @@
 import {CARDS} from '../cards'
 import {isHermit, isItem} from '../cards/types'
 import {Deck} from '../types/deck'
-import {TypeT} from '../types/cards'
 
 export function sortDecks(
 	decks: Array<Deck>,

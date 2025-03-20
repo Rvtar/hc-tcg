@@ -1,9 +1,4 @@
-import {
-	CardComponent,
-	ObserverComponent,
-	SlotComponent,
-	StatusEffectComponent,
-} from '../../../components'
+import {CardComponent, ObserverComponent} from '../../../components'
 import query from '../../../components/query'
 import {GameModel} from '../../../models/game-model'
 import {beforeAttack} from '../../../types/priorities'
@@ -30,8 +25,8 @@ const JackUltraRare: Hermit = {
 		name: 'Golden Ratio',
 		cost: ['any', 'any'],
 		damage: 80,
-		power: 
-		'If there are 5 unique Hermits on your side of the board, deal double damage.\nIncludes non-Hermit cards like Armor Stand and Berry Bush.\nDifferent rarities on the Hermits do count as unique cards.',
+		power:
+			'If there are 5 unique Hermits on your side of the board, deal double damage.\nIncludes non-Hermit cards like Armor Stand and Berry Bush.\nDifferent rarities on the Hermits do count as unique cards.',
 	},
 	onAttach(
 		game: GameModel,
@@ -47,16 +42,19 @@ const JackUltraRare: Hermit = {
 
 				let uniqueHermits: Array<string> = []
 
-				game.components.filter(CardComponent, query.every(
-					query.card.currentPlayer,
-					query.card.attached,
-					query.card.slot(query.slot.hermit)
+				game.components
+					.filter(
+						CardComponent,
+						query.every(
+							query.card.currentPlayer,
+							query.card.attached,
+							query.card.slot(query.slot.hermit),
+						),
 					)
-				).forEach(
-					(card) => {
-						if (!uniqueHermits.includes(card.props.id)) uniqueHermits.push(card.props.id)
-					}
-				)
+					.forEach((card) => {
+						if (!uniqueHermits.includes(card.props.id))
+							uniqueHermits.push(card.props.id)
+					})
 
 				if (uniqueHermits.length === 5)
 					attack.multiplyDamage(component.entity, 2)
