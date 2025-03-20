@@ -14,6 +14,8 @@ const FarmDoubleItem: Item = {
 	shortName: 'Farm',
 	description: 'Counts as 2 Farm Item cards.',
 	expansion: 'item',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 2,
 	type: ['farm'],

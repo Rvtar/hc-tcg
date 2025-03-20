@@ -13,6 +13,8 @@ const RedstoneItem: Item = {
 	name: 'Redstone Item',
 	shortName: 'Redstone',
 	expansion: 'item',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'common',
 	tokens: 0,
 	type: ['redstone'],

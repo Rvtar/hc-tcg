@@ -14,6 +14,8 @@ const PvPDoubleItem: Item = {
 	shortName: 'PvP',
 	description: 'Counts as 2 PvP Item cards.',
 	expansion: 'item',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 2,
 	type: ['pvp'],

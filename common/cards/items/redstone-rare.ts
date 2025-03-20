@@ -14,6 +14,8 @@ const RedstoneDoubleItem: Item = {
 	shortName: 'Redstone',
 	description: 'Counts as 2 Redstone Item cards.',
 	expansion: 'item',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 2,
 	type: ['redstone'],

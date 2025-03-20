@@ -124,7 +124,7 @@ export type EffectCategoryT =
 	| 'Grenade'
 	| 'Throwable'
 
-export type ItemCategoryT = 'Base Game' | 'AE1' | 'Advent'
+export type ItemCategoryT = 'Base Game' | 'AE3' | 'Advent' | 'Scuffed'
 
 export type ScuffedCategoryT = HermitCategoryT | EffectCategoryT | ItemCategoryT
 

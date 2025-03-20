@@ -12,6 +12,8 @@ const PranksterItem: Item = {
 	name: 'Prankster Item',
 	shortName: 'Prankster',
 	expansion: 'item',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'common',
 	tokens: 0,
 	type: ['prankster'],

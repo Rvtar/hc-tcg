@@ -14,6 +14,8 @@ const ExplorerDoubleItem: Item = {
 	shortName: 'Explorer',
 	description: 'Counts as 2 Explorer Item cards.',
 	expansion: 'item',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 2,
 	type: ['explorer'],

@@ -6,10 +6,9 @@ export type ExpansionInfo = {
 export type ExpansionT =
 	| 'item'
 	| 'default'
-	| 'hermitcraftX'
+	| 'hcx'
 	| 'hc_plus'
 	| 'alter_egos'
-	| 'season_x'
 	| 'boss'
 	| 'minecraft'
 	| 'shifttech'
@@ -43,10 +42,9 @@ export type ExpansionDict = {
 export const EXPANSIONS: ExpansionDict = {
 	item: {name: 'Item', disabled: false},
 	default: {name: 'Hermitcraft', disabled: false},
-	hermitcraftX: {name: 'HermitcraftX', disabled: false},
+	hcx: {name: 'HermitcraftX', disabled: false},
 	hc_plus: {name: 'HC+', disabled: false},
 	alter_egos: {name: 'Alter Egos', disabled: false},
-	season_x: {name: 'HC Season X', disabled: false},
 	boss: {name: 'Boss', disabled: true},
 	minecraft: {name: 'Minecraft', disabled: false},
 	shifttech: {name: 'Shifttech', disabled: false},
