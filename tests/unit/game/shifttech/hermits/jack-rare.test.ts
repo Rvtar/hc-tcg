@@ -55,7 +55,9 @@ describe('Test Jack Rare', () => {
 					yield* playCardFromHand(game, JackRare, 'hermit', 0)
 					yield* attack(game, 'secondary')
 					expect(game.currentPlayer.getCardsCanBePlacedIn()).toStrictEqual([])
-					expect(playCardFromHand(game, BuilderDoubleItem, 'item', 0, 0)).toThrow('You cannot play cards that are in frozen slots')
+					expect(
+						playCardFromHand(game, BuilderDoubleItem, 'item', 0, 0),
+					).toThrow('You cannot play cards that are in frozen slots')
 				},
 			},
 			{startWithAllCards: true, noItemRequirements: true, forceCoinFlip: true},
