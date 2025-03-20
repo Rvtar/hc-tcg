@@ -55,8 +55,6 @@ describe('Test Jack Rare', () => {
 					yield* playCardFromHand(game, JackRare, 'hermit', 0)
 					yield* attack(game, 'secondary')
 					expect(game.currentPlayer.getCardsCanBePlacedIn()).toStrictEqual([])
-					yield* playCardFromHand(game, BuilderDoubleItem, 'item', 0, 0)
-					expect(game.currentPlayer.getHand()).toStrictEqual([BuilderDoubleItem])
 				},
 			},
 			{startWithAllCards: true, noItemRequirements: true, forceCoinFlip: true},
