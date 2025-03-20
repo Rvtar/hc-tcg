@@ -10,7 +10,7 @@ const DreamRare: Hermit = {
 	set: [],
 	update: 0,
 	rarity: 'rare',
-	tokens: 0,
+	tokens: 2,
 	type: ['speedrunner'],
 	health: 290,
 	primary: {
