@@ -38,8 +38,8 @@ const PoePoeEnforcer: Achievement = {
 					turnsSinceCurseOfBindings == 1 &&
 					targetHermit.slot.inRow() &&
 					targetHermit.slot.row?.entity ===
-					player.opponentPlayer.activeRowEntity &&
-						!deadTargets.includes(attack.target)
+					  player.opponentPlayer.activeRowEntity &&
+					!deadTargets.includes(attack.target)
 				) {
 					component.incrementGoalProgress({goal: 0})
 					deadTargets.push(attack.target)
