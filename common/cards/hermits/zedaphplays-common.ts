@@ -7,6 +7,8 @@ const ZedaphPlaysCommon: Hermit = {
 	numericId: 54,
 	name: 'Zedaph',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'common',
 	tokens: 0,
 	type: ['redstone'],

@@ -16,6 +16,8 @@ const TinFoilChefRare: Hermit = {
 	numericId: 46,
 	name: 'TFC',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 2,
 	type: ['miner'],

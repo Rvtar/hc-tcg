@@ -30,6 +30,8 @@ const RendogRare: Hermit = {
 	numericId: 38,
 	name: 'Rendog',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 2,
 	type: ['builder'],

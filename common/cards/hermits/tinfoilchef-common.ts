@@ -9,6 +9,8 @@ const TinFoilChefCommon: Hermit = {
 	rarity: 'common',
 	tokens: 0,
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	type: ['miner'],
 	health: 290,
 	primary: {

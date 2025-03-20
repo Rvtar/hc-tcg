@@ -16,6 +16,8 @@ const ZedaphPlaysRare: Hermit = {
 	numericId: 55,
 	name: 'Zedaph',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	type: ['explorer'],
 	tokens: 2,

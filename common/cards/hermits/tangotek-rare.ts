@@ -11,6 +11,8 @@ const TangoTekRare: Hermit = {
 	numericId: 44,
 	name: 'Tango',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 1,
 	type: ['farm'],

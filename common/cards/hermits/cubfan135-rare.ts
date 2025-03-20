@@ -11,6 +11,8 @@ const Cubfan135Rare: Hermit = {
 	numericId: 9,
 	name: 'Cub',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 1,
 	type: ['speedrunner'],

@@ -15,6 +15,8 @@ const ImpulseSVRare: Hermit = {
 	numericId: 24,
 	name: 'Impulse',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 4,
 	type: ['redstone'],

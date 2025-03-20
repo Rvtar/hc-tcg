@@ -25,6 +25,8 @@ const ZombieCleoRare: Hermit = {
 	numericId: 7,
 	name: 'Cleo',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 2,
 	type: ['pvp'],

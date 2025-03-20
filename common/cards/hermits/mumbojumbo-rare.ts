@@ -15,6 +15,8 @@ const MumboJumboRare: Hermit = {
 	numericId: 34,
 	name: 'Mumbo',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 4,
 	type: ['prankster'],

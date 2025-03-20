@@ -11,6 +11,8 @@ const FalseSymmetryRare: Hermit = {
 	numericId: 16,
 	name: 'False',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 1,
 	type: ['builder'],

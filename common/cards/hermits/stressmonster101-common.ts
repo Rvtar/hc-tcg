@@ -7,6 +7,8 @@ const StressMonster101Common: Hermit = {
 	numericId: 41,
 	name: 'Stress',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'common',
 	tokens: 0,
 	type: ['builder'],

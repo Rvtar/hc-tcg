@@ -18,6 +18,8 @@ const HumanCleoRare: Hermit = {
 	expansion: 'alter_egos',
 	palette: 'alter_egos',
 	background: 'alter_egos',
+	set: ['AE1'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 2,
 	type: ['pvp'],

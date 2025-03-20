@@ -23,6 +23,8 @@ const BoomerBdubsRare: Hermit = {
 	expansion: 'alter_egos',
 	background: 'alter_egos',
 	palette: 'alter_egos',
+	set: ['AE2'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 1,
 	type: ['redstone'],

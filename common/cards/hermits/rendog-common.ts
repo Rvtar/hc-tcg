@@ -7,6 +7,8 @@ const RendogCommon: Hermit = {
 	numericId: 37,
 	name: 'Rendog',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'common',
 	tokens: 1,
 	type: ['balanced'],

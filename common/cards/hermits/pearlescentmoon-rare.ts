@@ -15,6 +15,8 @@ const PearlescentMoonRare: Hermit = {
 	numericId: 36,
 	name: 'Pearl',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 3,
 	type: ['terraform'],
