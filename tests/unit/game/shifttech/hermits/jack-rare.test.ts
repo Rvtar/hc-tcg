@@ -2,9 +2,7 @@ import {describe, expect, test} from '@jest/globals'
 import JackRare from 'common/cards/shifttech/hermits/jack-rare'
 import BuilderItem from 'common/cards/items/builder-common'
 import BuilderDoubleItem from 'common/cards/items/builder-rare'
-import {PlayerComponent, RowComponent} from 'common/components'
-import query from 'common/components/query'
-import {attack, endTurn, pick, playCardFromHand, testGame} from '../../utils'
+import {attack, endTurn, playCardFromHand, testGame} from '../../utils'
 
 describe('Test Jack Rare', () => {
 	test('Test Jack Rare Base Functionality', () => {
