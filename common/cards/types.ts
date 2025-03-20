@@ -13,6 +13,7 @@ import type {
 	CardRarityT,
 	HermitAttackInfo,
 	PlayCardLog,
+	ScuffedCategoryT,
 	TokenCostT,
 	TypeT,
 } from '../types/cards'
@@ -23,7 +24,8 @@ export type Card = {
 	id: string
 	category: CardCategoryT
 	expansion: ExpansionT
-	set?: string //Scuffed Category
+	set: Array<ScuffedCategoryT> //Scuffed Category
+	update: number
 	numericId: number
 	name: string
 	shortName?: string
