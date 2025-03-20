@@ -1,7 +1,7 @@
 import {describe, expect, test} from '@jest/globals'
 import AllCards from 'common/achievements/jack-of-all-cards'
 import EthosLabCommon from 'common/cards/hermits/ethoslab-common'
-import ShadEECommon from 'common/cards/hermits/shadee-common'
+import GrianCommon from 'common/cards/hermits/grian-common'
 import BalancedItem from 'common/cards/items/balanced-common'
 import {attack, endTurn, playCardFromHand, testAchivement} from '../utils'
 
@@ -10,12 +10,12 @@ describe('Test Jack of All Cards achivement', () => {
 		testAchivement(
 			{
 				achievement: AllCards,
-				playerOneDeck: [EthosLabCommon, ShadEECommon, BalancedItem],
+				playerOneDeck: [EthosLabCommon, GrianCommon, BalancedItem],
 				playerTwoDeck: [EthosLabCommon],
 				playGame: function* (game) {
 					yield* playCardFromHand(game, EthosLabCommon, 'hermit', 0)
 					yield* playCardFromHand(game, BalancedItem, 'item', 0, 0)
-					yield* playCardFromHand(game, ShadEECommon, 'hermit', 1)
+					yield* playCardFromHand(game, GrianCommon, 'hermit', 1)
 					yield* endTurn(game)
 					yield* playCardFromHand(game, EthosLabCommon, 'hermit', 0)
 					yield* endTurn(game)
