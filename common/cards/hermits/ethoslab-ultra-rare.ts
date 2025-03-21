@@ -8,12 +8,14 @@ import {Hermit} from '../types'
 const EthosLabUltraRare: Hermit = {
 	...hermit,
 	id: 'ethoslab_ultra_rare',
-	numericId: 21,
+	numericId: 14,
 	name: 'Etho',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'ultra_rare',
 	tokens: 3,
-	type: 'pvp',
+	type: ['pvp'],
 	health: 250,
 	primary: {
 		name: 'Ladders',

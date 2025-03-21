@@ -4,14 +4,16 @@ import {Hermit} from '../types'
 const PoultrymanCommon: Hermit = {
 	...hermit,
 	id: 'poultryman_common',
-	numericId: 136,
+	numericId: 108,
 	name: 'Poultry Man',
 	expansion: 'alter_egos',
 	palette: 'alter_egos',
 	background: 'alter_egos',
+	set: ['AE1'],
+	update: 0,
 	rarity: 'common',
 	tokens: 0,
-	type: 'prankster',
+	type: ['prankster'],
 	health: 260,
 	primary: {
 		name: 'Eggscuse Me',

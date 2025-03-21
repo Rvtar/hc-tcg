@@ -4,12 +4,14 @@ import {Hermit} from '../types'
 const IJevinCommon: Hermit = {
 	...hermit,
 	id: 'ijevin_common',
-	numericId: 38,
+	numericId: 27,
 	name: 'Jevin',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'common',
 	tokens: 0,
-	type: 'explorer',
+	type: ['explorer'],
 	health: 250,
 	primary: {
 		name: "Got 'Em",

@@ -4,12 +4,14 @@ import {Hermit} from '../types'
 const KeralisCommon: Hermit = {
 	...hermit,
 	id: 'keralis_common',
-	numericId: 71,
+	numericId: 31,
 	name: 'Keralis',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'common',
 	tokens: 0,
-	type: 'builder',
+	type: ['builder'],
 	health: 270,
 	primary: {
 		name: 'Looky Looky',

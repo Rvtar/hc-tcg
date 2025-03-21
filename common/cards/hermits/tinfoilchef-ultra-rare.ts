@@ -15,12 +15,14 @@ import {Hermit} from '../types'
 const TinFoilChefUltraRare: Hermit = {
 	...hermit,
 	id: 'tinfoilchef_ultra_rare',
-	numericId: 99,
+	numericId: 47,
 	name: 'TFC',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'ultra_rare',
 	tokens: 3,
-	type: 'miner',
+	type: ['miner'],
 	health: 300,
 	primary: {
 		name: 'Phone Call',

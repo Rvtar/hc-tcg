@@ -15,12 +15,14 @@ import {Hermit} from '../types'
 const GoodTimesWithScarRare: Hermit = {
 	...hermit,
 	id: 'goodtimeswithscar_rare',
-	numericId: 33,
+	numericId: 40,
 	name: 'Scar',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 1,
-	type: 'builder',
+	type: ['builder'],
 	health: 270,
 	primary: {
 		name: 'Scarred For Life',

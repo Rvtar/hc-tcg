@@ -13,14 +13,16 @@ import {Hermit} from '../types'
 const HumanCleoRare: Hermit = {
 	...hermit,
 	id: 'humancleo_rare',
-	numericId: 132,
+	numericId: 104,
 	name: 'Human Cleo',
 	expansion: 'alter_egos',
 	palette: 'alter_egos',
 	background: 'alter_egos',
+	set: ['AE1'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 2,
-	type: 'pvp',
+	type: ['pvp'],
 	health: 290,
 	primary: {
 		name: 'Humanity',

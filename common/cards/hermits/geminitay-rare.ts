@@ -9,12 +9,14 @@ import {Hermit} from '../types'
 const GeminiTayRare: Hermit = {
 	...hermit,
 	id: 'geminitay_rare',
-	numericId: 28,
+	numericId: 18,
 	name: 'Gem',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 1,
-	type: 'terraform',
+	type: ['terraform'],
 	health: 270,
 	primary: {
 		name: "It's Fine",
@@ -34,7 +36,7 @@ const GeminiTayRare: Hermit = {
 		component: CardComponent,
 		observer: ObserverComponent,
 	) {
-		const {player} = component
+		const {opponentPlayer, player} = component
 
 		observer.subscribeWithPriority(
 			game.hooks.afterAttack,

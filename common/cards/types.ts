@@ -13,6 +13,7 @@ import type {
 	CardRarityT,
 	HermitAttackInfo,
 	PlayCardLog,
+	ScuffedCategoryT,
 	TokenCostT,
 	TypeT,
 } from '../types/cards'
@@ -23,6 +24,8 @@ export type Card = {
 	id: string
 	category: CardCategoryT
 	expansion: ExpansionT
+	set: Array<ScuffedCategoryT> //Scuffed Category
+	update: number
 	numericId: number
 	name: string
 	shortName?: string
@@ -49,7 +52,7 @@ export type Card = {
 
 export type Item = Card & {
 	item: null
-	type: TypeT
+	type: Array<TypeT>
 	description?: string
 	energy: Array<TypeT>
 }
@@ -94,7 +97,7 @@ export function hasDescription(
 
 export type Hermit = HasHealth & {
 	hermit: null
-	type: TypeT
+	type: Array<TypeT> | null
 	primary: HermitAttackInfo
 	secondary: HermitAttackInfo
 	getAttack(

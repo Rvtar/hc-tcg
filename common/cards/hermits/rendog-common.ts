@@ -4,12 +4,14 @@ import {Hermit} from '../types'
 const RendogCommon: Hermit = {
 	...hermit,
 	id: 'rendog_common',
-	numericId: 86,
+	numericId: 37,
 	name: 'Rendog',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'common',
 	tokens: 1,
-	type: 'balanced',
+	type: ['balanced'],
 	health: 260,
 	primary: {
 		name: 'Professional',

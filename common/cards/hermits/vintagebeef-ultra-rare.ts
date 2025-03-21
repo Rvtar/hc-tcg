@@ -15,12 +15,14 @@ import EthosLabUltraRare from './ethoslab-ultra-rare'
 const VintageBeefUltraRare: Hermit = {
 	...hermit,
 	id: 'vintagebeef_ultra_rare',
-	numericId: 104,
+	numericId: 5,
 	name: 'Beef',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'ultra_rare',
 	tokens: 2,
-	type: 'explorer',
+	type: ['explorer'],
 	health: 280,
 	primary: {
 		name: 'Back in Action',

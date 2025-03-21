@@ -11,12 +11,14 @@ import {Hermit} from '../types'
 const HypnotizdRare: Hermit = {
 	...hermit,
 	id: 'hypnotizd_rare',
-	numericId: 37,
+	numericId: 22,
 	name: 'Hypno',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 3,
-	type: 'miner',
+	type: ['miner'],
 	health: 270,
 	primary: {
 		name: 'MmHmm',
