@@ -1,7 +1,7 @@
 import {GameModel} from '../models/game-model'
 
 export type CardRarityT = 'common' | 'rare' | 'ultra_rare' | 'mythic' | 'NA'
-export type TokenCostT = number | 'wild'
+export type TokenCostT = number | 'wild' | 'etho-ur'
 
 export type RankT =
 	| 'air'

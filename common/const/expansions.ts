@@ -4,12 +4,15 @@ export type ExpansionInfo = {
 }
 
 export type ExpansionT =
+	// Vanilla
 	| 'item'
 	| 'default'
-	| 'hcx'
-	| 'hc_plus'
 	| 'alter_egos'
+	| 'beds'
 	| 'boss'
+	// Scuffed
+	| 'hc_plus'
+	| 'hcx'
 	| 'minecraft'
 	| 'shifttech'
 	| 'btc'
@@ -44,7 +47,8 @@ export const EXPANSIONS: ExpansionDict = {
 	default: {name: 'Hermitcraft', disabled: false},
 	hcx: {name: 'HermitcraftX', disabled: false},
 	hc_plus: {name: 'HC+', disabled: false},
-	alter_egos: {name: 'Alter Egos', disabled: false},
+	alter_egos: { name: 'Alter Egos', disabled: false },
+	beds: {name: 'Beds', disabled: true}, //@ScTODO Integrate into Minecraft
 	boss: {name: 'Boss', disabled: true},
 	minecraft: {name: 'Minecraft', disabled: false},
 	shifttech: {name: 'Shifttech', disabled: false},

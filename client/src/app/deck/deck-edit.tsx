@@ -249,69 +249,7 @@ type Props = {
 	deck: Deck | null
 }
 
-const TYPE_ORDER = {
-	hermit: 0,
-	attach: 1,
-	single_use: 2,
-	useless: 2,
-	item: 3,
-	health: 4,
-}
-
-// We want to fix UR with Rare to place all cards with abilities in the proper order.
-const RARITY_ORDER = {
-	common: 0,
-	rare: 1,
-	ultra_rare: 1,
-	mythic: 1,
-	NA: 2,
-}
-
-export function sortCards(
-	cards: Array<LocalCardInstance>,
-): Array<LocalCardInstance> {
-	return cards.slice().sort((a: LocalCardInstance, b: LocalCardInstance) => {
-		return (
-			[
-				TYPE_ORDER[a.props.category] - TYPE_ORDER[b.props.category],
-				isHermit(a.props) &&
-					isHermit(b.props) &&
-					(a.props.type
-						? a.props.type[0].localeCompare(
-								b.props.type ? b.props.type[0] : 'NA',
-							)
-						: 'NA'.localeCompare(b.props.type ? b.props.type[0] : 'NA')),
-				isItem(a.props) &&
-					isItem(b.props) &&
-					a.props.name.localeCompare(b.props.name),
-				isHermit(a.props) &&
-					isHermit(b.props) &&
-					RARITY_ORDER[a.props.rarity] - RARITY_ORDER[b.props.rarity],
-				a.props.tokens !== 'wild' &&
-					b.props.tokens !== 'wild' &&
-					a.props.tokens - b.props.tokens,
-				isHermit(a.props) &&
-					isHermit(b.props) &&
-					a.props.secondary.cost.length - b.props.secondary.cost.length,
-				isHermit(a.props) &&
-					isHermit(b.props) &&
-					a.props.secondary.damage - b.props.secondary.damage,
-				isHermit(a.props) &&
-					isHermit(b.props) &&
-					a.props.primary.cost.length - b.props.primary.cost.length,
-				isHermit(a.props) &&
-					isHermit(b.props) &&
-					a.props.primary.damage - b.props.primary.damage,
-				isHermit(a.props) &&
-					isHermit(b.props) &&
-					a.props.health - b.props.health,
-				a.props.name.localeCompare(b.props.name),
-			].find(Boolean) || 0
-		)
-	})
-}
-
-const ALL_CARDS = sortCards(
+const ALL_CARDS = sortCardInstances(
 	CARDS_LIST.filter(
 		(card) =>
 			// Don't show disabled cards
@@ -405,6 +343,7 @@ function EditDeck({
 const filteredCards: LocalCardInstance[] = sortCardInstances(
 		ALL_CARDS.filter((card_) => {
 			let card = CARDS[card_.id] as Card
+			let type = isHermit(card) || isItem(card) && card.type? card.type as [string] : null
 			return (
 				// Card Name Filter
 				card.name.toLowerCase().includes(deferredTextQuery.toLowerCase()) &&
@@ -412,10 +351,8 @@ const filteredCards: LocalCardInstance[] = sortCardInstances(
 				(rankQuery === '' || getCardRank(card.tokens) === rankQuery) &&
 				// Card Type Filter
 				(typeQuery === '' ||
-					!(isHermit(card) || isItem(card)) ||
 					((isHermit(card) || isItem(card)) &&
-						card.type &&
-						card.type.includes(typeQuery))) &&
+						card.type? type?.includes(typeQuery) : typeQuery == 'null')) &&
 				// Card Expansion Filter
 				(expansionQuery.length === 0 ||
 					expansionQuery.includes(card.expansion)) &&
@@ -945,7 +882,7 @@ const filteredCards: LocalCardInstance[] = sortCardInstances(
 									header={cardGroupHeader('Hermits', selectedCards.hermits)}
 								>
 									<CardList
-										cards={sortCards(selectedCards.hermits)}
+										cards={sortCardInstances(selectedCards.hermits)}
 										displayTokenCost={true}
 										wrap={true}
 										onClick={removeCard}
@@ -959,7 +896,7 @@ const filteredCards: LocalCardInstance[] = sortCardInstances(
 								)}
 							>
 								<CardList
-									cards={sortCards(selectedCards.attachableEffects)}
+									cards={sortCardInstances(selectedCards.attachableEffects)}
 									displayTokenCost={true}
 									wrap={true}
 									onClick={removeCard}
@@ -972,7 +909,7 @@ const filteredCards: LocalCardInstance[] = sortCardInstances(
 								)}
 							>
 								<CardList
-									cards={sortCards(selectedCards.singleUseEffects)}
+									cards={sortCardInstances(selectedCards.singleUseEffects)}
 									displayTokenCost={true}
 									wrap={true}
 									onClick={removeCard}
@@ -980,7 +917,7 @@ const filteredCards: LocalCardInstance[] = sortCardInstances(
 							</Accordion>
 							<Accordion header={cardGroupHeader('Items', selectedCards.items)}>
 								<CardList
-									cards={sortCards(selectedCards.items)}
+									cards={sortCardInstances(selectedCards.items)}
 									displayTokenCost={true}
 									wrap={true}
 									onClick={removeCard}
@@ -991,7 +928,7 @@ const filteredCards: LocalCardInstance[] = sortCardInstances(
 						<div className={css.showOnMobile}>
 							Cards
 							<MobileCardList
-								cards={sortCards(loadedDeck.cards)}
+								cards={sortCardInstances(loadedDeck.cards)}
 								small={false}
 								onSubtractionClick={removeCard}
 								onAdditionClick={addCard}

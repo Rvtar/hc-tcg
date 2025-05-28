@@ -27,7 +27,7 @@ const ItemCardModule = memo(({card, displayTokenCost}: ItemCardProps) => {
 				ry="15"
 			/>
 			<g>
-				{card.type === 'any' && (
+				{card.type[0] === 'any' && (
 					<>
 						<defs>
 							<rect id="rect" x="10" y="10" width="380" height="380" rx="15" />

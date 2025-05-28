@@ -212,12 +212,15 @@ export const getRarity = (card: Card): React.ReactNode => {
 const getExpansion = (card: Card): React.ReactNode => {
 	if (card.expansion !== 'default') {
 		const expansion = card.expansion as
+			// Vanilla
+			| 'item'
 			| 'default'
-			| 'hermitcraftX'
-			| 'hc_plus'
 			| 'alter_egos'
-			| 'season_x'
+			| 'beds'
 			| 'boss'
+			// Scuffed
+			| 'hc_plus'
+			| 'hcx'
 			| 'minecraft'
 			| 'shifttech'
 			| 'btc'
