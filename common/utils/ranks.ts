@@ -3,6 +3,7 @@ import {RankT, TokenCostT} from '../types/cards'
 
 export function getCardVisualTokenCost(tokens: TokenCostT): number {
 	if (tokens === 'wild') return 1
+	if (tokens === 'etho-ur') return 3
 	if (tokens < 0) return 0
 	return tokens
 }
