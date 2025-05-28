@@ -17,6 +17,8 @@ const PythonGBRare: Hermit = {
 	expansion: 'hc_plus',
 	palette: 'advent_of_tcg',
 	background: 'advent_of_tcg',
+	set: ['Advent'],
+	update: 5,
 	rarity: 'rare',
 	tokens: 3,
 	type: ['redstone'],

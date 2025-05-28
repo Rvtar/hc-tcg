@@ -19,6 +19,8 @@ const LDShadowLadyRare: Hermit = {
 	expansion: 'mcyt',
 	palette: 'advent_of_tcg',
 	background: 'advent_of_tcg',
+	set: ['Advent'],
+	update: 3
 	rarity: 'rare',
 	tokens: 2,
 	type: ['terraform'],
