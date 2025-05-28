@@ -8,6 +8,7 @@ const PoePoeEnforcer: Achievement = {
 	...achievement,
 	numericId: 42,
 	id: 'poe-poe-enforcer',
+	progressionMethod: 'sum',
 	levels: [
 		{
 			name: 'Poe Poe Enforcer',
@@ -41,17 +42,9 @@ const PoePoeEnforcer: Achievement = {
 						player.opponentPlayer.activeRowEntity &&
 					!deadTargets.includes(attack.target)
 				) {
-					component.incrementGoalProgress({goal: 0})
+					component.updateGoalProgress({goal: 0})
 					deadTargets.push(attack.target)
 				}
-			},
-		)
-
-		observer.subscribeWithPriority(
-			player.hooks.onTurnEnd,
-			onTurnEnd.BEFORE_STATUS_EFFECT_TIMEOUT,
-			() => {
-				deadTargets = []
 			},
 		)
 
@@ -67,6 +60,14 @@ const PoePoeEnforcer: Achievement = {
 				) {
 					turnsSinceCurseOfBindings = 0
 				}
+			},
+		)
+
+		observer.subscribeWithPriority(
+			player.hooks.onTurnEnd,
+			onTurnEnd.ON_STATUS_EFFECT_TIMEOUT,
+			() => {
+				deadTargets = []
 			},
 		)
 	},

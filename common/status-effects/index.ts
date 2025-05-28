@@ -11,6 +11,7 @@ import DoubleItemPlayedEffect from './double-item-played'
 import DyedEffect from './dyed'
 import EfficiencyEffect from './efficiency'
 import ExBossNineEffect from './exboss-nine'
+import ExiledEffect from './exiled'
 import FireEffect from './fire'
 import FortuneEffect from './fortune'
 import FrozenEffect from './frozen'
@@ -20,11 +21,13 @@ import {
 	GasLightTriggeredEffect,
 } from './gas-light'
 import GoMiningEffect from './go-mining'
+import HandBlockEffect from './hand-block'
 import {IgnoreAttachSlotEffect} from './ignore-attach'
 import {
 	InvisibilityPotionHeadsEffect as InvisibilityPotionHeadsEffect,
 	InvisibilityPotionTailsEffect as InvisibilityPotionTailsEffect,
 } from './invisibility-potion'
+import LitFuseEffect from './lit_fuse'
 import LooseShellEffect from './loose-shell'
 import MelodyEffect from './melody'
 import {
@@ -37,6 +40,8 @@ import {
 } from './multiturn-attack-disabled'
 import MuseumCollectionEffect from './museum-collection'
 import NaughtyRegiftEffect from './naughty-regift'
+import OverhealEffect from './overheal'
+import PermanentSleepingEffect from './permanent-sleeping'
 import PoisonEffect from './poison'
 import PoisonQuiverEffect from './poison-quiver'
 import PostInspectorEffect from './post-inspector'
@@ -66,6 +71,7 @@ import WeaknessEffect from './weakness'
 export const STATUS_EFFECTS_LIST: Array<StatusEffect> = [
 	/* Regular Status Effects */
 	SleepingEffect,
+	PermanentSleepingEffect,
 	BadOmenEffect,
 	RoyalProtectionEffect,
 	FrozenEffect,
@@ -115,12 +121,16 @@ export const STATUS_EFFECTS_LIST: Array<StatusEffect> = [
 	MuseumCollectionEffect,
 	SmeltingEffect,
 	MelodyEffect,
+	LitFuseEffect,
+	OverhealEffect,
 	/* Hidden Status Effects */
 	TurnSkippedEffect,
 	GasLightEffect,
 	GasLightPotentialEffect,
 	TFCDiscardedFromEffect,
 	SculkCatalystTriggeredEffect,
+	ExiledEffect,
+	HandBlockEffect,
 ]
 
 export const STATUS_EFFECTS: Record<string, StatusEffect> =
