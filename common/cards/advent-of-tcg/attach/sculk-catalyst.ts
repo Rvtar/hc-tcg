@@ -15,6 +15,8 @@ const SculkCatalyst: Attach = {
 	id: 'sculk_catalyst',
 	name: 'Sculk Catalyst',
 	expansion: 'minecraft',
+	set: ['Advent'],
+	update: 10,
 	numericId: 1400,
 	rarity: 'rare',
 	tokens: 1,

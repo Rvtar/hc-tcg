@@ -16,6 +16,8 @@ const Cat: Attach = {
 	numericId: 505,
 	name: 'Cat',
 	expansion: 'minecraft',
+	set: ['Pet'],
+	update: 5,
 	rarity: 'rare',
 	tokens: 1,
 	description:

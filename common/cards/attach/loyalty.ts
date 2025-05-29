@@ -11,6 +11,8 @@ const Loyalty: Attach = {
 	numericId: 84,
 	name: 'Loyalty',
 	expansion: 'default',
+	set: ['Book'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 0,
 	description:

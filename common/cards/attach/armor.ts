@@ -109,6 +109,8 @@ export const GoldArmor: Attach = {
 	numericId: 72,
 	name: 'Gold Armour',
 	expansion: 'default',
+	set: ['Golden', 'Defense'],
+	update: 0,
 	rarity: 'common',
 	tokens: 0,
 	description:
@@ -128,6 +130,8 @@ export const IronArmor: Attach = {
 	numericId: 78,
 	name: 'Iron Armour',
 	expansion: 'default',
+	set: [],
+	update: 0,
 	rarity: 'common',
 	tokens: 2,
 	description:
@@ -147,6 +151,8 @@ export const ChainmailArmor: Attach = {
 	numericId: 113,
 	name: 'Chainmail Armour',
 	expansion: 'alter_egos',
+	set: ['Defense'],
+	update: 0,
 	rarity: 'common',
 	tokens: 1,
 	description:
@@ -167,6 +173,8 @@ export const DiamondArmor: Attach = {
 	numericId: 65,
 	name: 'Diamond Armour',
 	expansion: 'default',
+	set: [],
+	update: 0,
 	rarity: 'rare',
 	tokens: 3,
 	description:
@@ -187,6 +195,8 @@ export const NetheriteArmor: Attach = {
 	numericId: 87,
 	name: 'Netherite Armour',
 	expansion: 'default',
+	set: [],
+	update: 0,
 	rarity: 'ultra_rare',
 	tokens: 4,
 	description:

@@ -15,6 +15,8 @@ const Bed: Attach = {
 	id: 'bed',
 	numericId: 56,
 	expansion: 'default',
+	set: ['Bed'],
+	update: 0,
 	name: 'Bed',
 	rarity: 'ultra_rare',
 	tokens: 2,

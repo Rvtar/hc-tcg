@@ -93,6 +93,7 @@ export type EffectCategoryT =
 	//Category
 	| 'Advent'
 	| 'Arrow'
+	| 'Bed'
 	| 'Book'
 	| 'Card'
 	| 'Explosive'
