@@ -7,14 +7,16 @@ import {Hermit} from '../types'
 const OverseerRare: Hermit = {
 	...hermit,
 	id: 'overseer_rare',
-	numericId: 235,
+	numericId: 807,
 	name: 'Overseer',
-	expansion: 'alter_egos_ii',
+	expansion: 'alter_egos',
 	background: 'alter_egos',
 	palette: 'alter_egos',
+	set: ['AE2'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 0,
-	type: 'miner',
+	type: ['miner'],
 	health: 250,
 	primary: {
 		name: 'Testing',
@@ -41,7 +43,11 @@ const OverseerRare: Hermit = {
 					return
 
 				const targetHermit = attack.target?.getHermit()
-				if (targetHermit?.isHermit() && targetHermit.props.type === 'farm')
+				if (
+					targetHermit?.isHermit() &&
+					targetHermit.props.type &&
+					targetHermit.props.type.includes('farm')
+				)
 					attack.multiplyDamage(component.entity, 2)
 			},
 		)

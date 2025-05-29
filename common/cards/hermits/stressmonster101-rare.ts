@@ -7,12 +7,14 @@ import {Hermit} from '../types'
 const StressMonster101Rare: Hermit = {
 	...hermit,
 	id: 'stressmonster101_rare',
-	numericId: 93,
+	numericId: 42,
 	name: 'Stress',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 3,
-	type: 'prankster',
+	type: ['prankster'],
 	health: 300,
 	primary: {
 		name: 'Plonker',

@@ -4,14 +4,16 @@ import {Hermit} from '../types'
 const BeetlejhostCommon: Hermit = {
 	...hermit,
 	id: 'beetlejhost_common',
-	numericId: 126,
+	numericId: 98,
 	name: 'Beetlejhost',
 	expansion: 'alter_egos',
 	palette: 'alter_egos',
 	background: 'alter_egos',
+	set: ['AE1'],
+	update: 0,
 	rarity: 'common',
 	tokens: 1,
-	type: 'speedrunner',
+	type: ['speedrunner'],
 	health: 290,
 	primary: {
 		name: 'Expand',

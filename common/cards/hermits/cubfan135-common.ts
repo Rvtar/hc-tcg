@@ -4,12 +4,14 @@ import {Hermit} from '../types'
 const Cubfan135Common: Hermit = {
 	...hermit,
 	id: 'cubfan135_common',
-	numericId: 9,
+	numericId: 8,
 	name: 'Cub',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'common',
 	tokens: 0,
-	type: 'balanced',
+	type: ['balanced'],
 	health: 290,
 	primary: {
 		name: 'Heyo',

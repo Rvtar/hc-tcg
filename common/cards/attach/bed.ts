@@ -13,8 +13,10 @@ import {Attach} from '../types'
 const Bed: Attach = {
 	...attach,
 	id: 'bed',
-	numericId: 2,
+	numericId: 56,
 	expansion: 'default',
+	set: ['Bed'],
+	update: 0,
 	name: 'Bed',
 	rarity: 'ultra_rare',
 	tokens: 2,

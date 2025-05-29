@@ -23,9 +23,11 @@ export function isFromTrapdoor(game: GameModel, attack: AttackModel): boolean {
 const Trapdoor: Attach = {
 	...attach,
 	id: 'trapdoor',
-	numericId: 205,
+	numericId: 513,
 	name: 'Trapdoor',
-	expansion: 'advent_of_tcg',
+	expansion: 'minecraft',
+	set: ['Advent'],
+	update: 5,
 	rarity: 'rare',
 	tokens: 3,
 	description:

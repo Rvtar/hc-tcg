@@ -12,9 +12,11 @@ import {Attach} from '../types'
 const Totem: Attach = {
 	...attach,
 	id: 'totem',
-	numericId: 101,
+	numericId: 95,
 	name: 'Totem',
 	expansion: 'default',
+	set: [],
+	update: 0,
 	rarity: 'ultra_rare',
 	tokens: 2,
 	description:

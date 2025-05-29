@@ -4,12 +4,14 @@ import {Hermit} from '../types'
 const TangoTekCommon: Hermit = {
 	...hermit,
 	id: 'tangotek_common',
-	numericId: 94,
+	numericId: 43,
 	name: 'Tango',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'common',
 	tokens: 0,
-	type: 'redstone',
+	type: ['redstone'],
 	health: 300,
 	primary: {
 		name: 'Thing-ificator',

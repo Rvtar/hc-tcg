@@ -4,12 +4,14 @@ import {Hermit} from '../types'
 const GoodTimesWithScarCommon: Hermit = {
 	...hermit,
 	id: 'goodtimeswithscar_common',
-	numericId: 32,
+	numericId: 39,
 	name: 'Scar',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'common',
 	tokens: 1,
-	type: 'terraform',
+	type: ['terraform'],
 	health: 260,
 	primary: {
 		name: 'Jellie Paws',

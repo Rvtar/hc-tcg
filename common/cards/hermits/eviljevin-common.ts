@@ -4,14 +4,16 @@ import {Hermit} from '../types'
 const EvilJevinCommon: Hermit = {
 	...hermit,
 	id: 'eviljevin_common',
-	numericId: 127,
+	numericId: 99,
 	name: 'Evil Jevin',
 	expansion: 'alter_egos',
 	palette: 'alter_egos',
 	background: 'alter_egos',
+	set: ['AE1'],
+	update: 0,
 	rarity: 'common',
 	tokens: 0,
-	type: 'miner',
+	type: ['miner'],
 	health: 260,
 	primary: {
 		name: 'Pickle',

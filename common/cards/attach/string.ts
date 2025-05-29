@@ -5,9 +5,11 @@ import {Attach} from '../types'
 const String: Attach = {
 	...attach,
 	id: 'string',
-	numericId: 122,
+	numericId: 124,
 	name: 'String',
 	expansion: 'alter_egos',
+	set: [],
+	update: 0,
 	category: 'attach',
 	rarity: 'rare',
 	tokens: 2,

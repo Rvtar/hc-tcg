@@ -4,12 +4,14 @@ import {Hermit} from '../types'
 const EthosLabCommon: Hermit = {
 	...hermit,
 	id: 'ethoslab_common',
-	numericId: 19,
+	numericId: 12,
 	name: 'Etho',
 	expansion: 'default',
+	set: ['Base Game'],
+	update: 0,
 	rarity: 'common',
 	tokens: 1,
-	type: 'balanced',
+	type: ['balanced'],
 	health: 260,
 	primary: {
 		name: 'Snack Time',

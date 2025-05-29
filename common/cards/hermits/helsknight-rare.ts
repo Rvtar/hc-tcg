@@ -12,14 +12,16 @@ import {Hermit} from '../types'
 const HelsknightRare: Hermit = {
 	...hermit,
 	id: 'helsknight_rare',
-	numericId: 130,
+	numericId: 102,
 	name: 'Helsknight',
 	expansion: 'alter_egos',
 	palette: 'alter_egos',
 	background: 'alter_egos',
+	set: ['AE1'],
+	update: 0,
 	rarity: 'rare',
 	tokens: 2,
-	type: 'pvp',
+	type: ['pvp'],
 	health: 270,
 	primary: {
 		name: 'Pitiful',

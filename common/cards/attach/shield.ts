@@ -8,9 +8,11 @@ import {Attach} from '../types'
 const Shield: Attach = {
 	...attach,
 	id: 'shield',
-	numericId: 88,
+	numericId: 89,
 	name: 'Shield',
 	expansion: 'default',
+	set: [],
+	update: 0,
 	rarity: 'common',
 	tokens: 2,
 	description:

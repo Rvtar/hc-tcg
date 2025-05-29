@@ -8,9 +8,11 @@ import {Attach} from '../types'
 const LightningRod: Attach = {
 	...attach,
 	id: 'lightning_rod',
-	numericId: 121,
+	numericId: 119,
 	name: 'Lightning Rod',
 	expansion: 'alter_egos',
+	set: [],
+	update: 0,
 	rarity: 'rare',
 	tokens: 2,
 	description:
