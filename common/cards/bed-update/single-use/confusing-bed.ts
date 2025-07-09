@@ -8,7 +8,7 @@ const ConfusingBed: SingleUse = {
 	id: 'confusing_bed',
 	name: 'Confusing Bed',
 	expansion: 'beds',
-	numericId: 269,
+	numericId: 1791,
 	rarity: 'ultra_rare',
 	tokens: 2,
 	description: 'Shuffle your board rows.',

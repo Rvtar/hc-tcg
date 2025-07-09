@@ -14,7 +14,7 @@ import {Attach} from '../../types'
 const BouncyBed: Attach = {
 	...attach,
 	id: 'bouncy_bed',
-	numericId: 273,
+	numericId: 1790,
 	expansion: 'beds',
 	name: 'Bouncy bed',
 	rarity: 'ultra_rare',

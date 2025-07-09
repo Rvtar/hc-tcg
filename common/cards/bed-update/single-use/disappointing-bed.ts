@@ -7,7 +7,7 @@ import {SingleUse} from '../../types'
 const DisappointingBed: SingleUse = {
 	...singleUse,
 	id: 'disappointing_bed',
-	numericId: 274,
+	numericId: 1794,
 	name: 'Disappointing Bed',
 	expansion: 'beds',
 	rarity: 'ultra_rare',

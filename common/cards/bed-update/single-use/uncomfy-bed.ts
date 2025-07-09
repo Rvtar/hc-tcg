@@ -11,7 +11,7 @@ const UncomfyBed: SingleUse = {
 	id: 'uncomfy_bed',
 	name: 'Uncomfy Bed',
 	expansion: 'beds',
-	numericId: 263,
+	numericId: 1802,
 	rarity: 'ultra_rare',
 	tokens: 2,
 	description:

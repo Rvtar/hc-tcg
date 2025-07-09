@@ -13,7 +13,7 @@ const ExileBed: SingleUse = {
 	id: 'exile_bed',
 	name: 'Exile Bed',
 	expansion: 'beds',
-	numericId: 270,
+	numericId: 1795,
 	rarity: 'ultra_rare',
 	tokens: 3,
 	description: "Send your opponent's active hermit to exile.",

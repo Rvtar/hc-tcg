@@ -12,7 +12,7 @@ import {SingleUse} from '../../types'
 const BlockingBed: SingleUse = {
 	...singleUse,
 	id: 'blocking_bed',
-	numericId: 271,
+	numericId: 1789,
 	name: 'Blocking Bed',
 	expansion: 'beds',
 	rarity: 'ultra_rare',

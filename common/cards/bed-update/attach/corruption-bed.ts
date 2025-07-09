@@ -7,7 +7,7 @@ import {Attach, Hermit} from '../../types'
 const CorruptionBed: Attach = {
 	...attach,
 	id: 'corruption_bed',
-	numericId: 272,
+	numericId: 1792,
 	expansion: 'beds',
 	name: 'Corruption bed',
 	rarity: 'ultra_rare',

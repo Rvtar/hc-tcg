@@ -18,7 +18,7 @@ const hasSwitchable = query.every(
 const CowardsBed: SingleUse = {
 	...singleUse,
 	id: "coward's_bed",
-	numericId: 264,
+	numericId: 1793,
 	name: "Coward's Bed",
 	expansion: 'beds',
 	rarity: 'ultra_rare',
