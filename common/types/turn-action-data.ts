@@ -59,6 +59,11 @@ export type ForfeitAction = {
 	player: PlayerEntity
 }
 
+export type DisconnectAction = {
+	type: 'DISCONNECT'
+	player: PlayerEntity
+}
+
 export type OtherTurnActions = {
 	type:
 		| 'END_TURN'
@@ -77,3 +82,4 @@ export type AnyTurnActionData =
 	| ModalResult
 	| WaitActionData
 	| ForfeitAction
+	| DisconnectAction
