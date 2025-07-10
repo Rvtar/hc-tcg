@@ -4,7 +4,7 @@ import {Goal} from '../types/achievements'
 import {achievement} from './defaults'
 import {Achievement} from './types'
 
-const defaultCards = CARDS_LIST.filter((card) => card.expansion === 'default')
+const update0Cards = CARDS_LIST.filter((card) => card.numericId >= 0 && card.numericId <= 196)
 defaultCards.sort((cardA, cardB) => cardA.numericId - cardB.numericId)
 
 const AllCards: Achievement = {
@@ -47,7 +47,7 @@ const AllCards: Achievement = {
 		const playedCards: Set<Card['numericId']> = new Set()
 
 		observer.subscribe(player.hooks.onAttach, (card) => {
-			if (card.props.expansion !== 'default') return
+			if (card.props.numericId > 196) return
 			playedCards.add(card.props.numericId)
 		})
 
