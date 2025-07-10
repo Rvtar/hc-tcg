@@ -15,7 +15,7 @@ const AllCards: Achievement = {
 	levels: [
 		{
 			name: 'Jack of All Cards',
-			description: 'Win a game using every card from the base set.',
+			description: 'Win a game using every card from update 0.',
 			steps: defaultCards.length,
 		},
 	],
@@ -25,7 +25,7 @@ const AllCards: Achievement = {
 	getGoals(goals) {
 		const outputGoals: Array<Goal> = []
 		CARDS_LIST.forEach((card) => {
-			if (card.expansion !== 'default') return
+			if (card.numericId > 196) return
 
 			const getRarity = () => {
 				if (card.category !== 'hermit') return ''
