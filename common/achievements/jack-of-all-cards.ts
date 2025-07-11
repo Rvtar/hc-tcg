@@ -16,7 +16,7 @@ const AllCards: Achievement = {
 		{
 			name: 'Jack of All Cards',
 			description: 'Win a game using every card from update 0.',
-			steps: defaultCards.length,
+			steps: update0Cards.length,
 		},
 	],
 	getProgress(goals) {
