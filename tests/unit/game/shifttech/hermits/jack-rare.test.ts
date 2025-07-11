@@ -56,8 +56,8 @@ describe('Test Jack Rare', () => {
 					await test.attack('secondary')
 					expect(game.currentPlayer.getCardsCanBePlacedIn()).toStrictEqual([])
 					expect(
-						await test.playCardFromHand(BuilderDoubleItem, 'item', 0, 0),
-					).toThrow('You cannot play cards that are in frozen slots')
+						test.playCardFromHand(BuilderDoubleItem, 'item', 0, 0),
+					).reject.toThrow('You cannot play cards that are in frozen slots')
 				},
 			},
 			{startWithAllCards: true, noItemRequirements: true, forceCoinFlip: true},
