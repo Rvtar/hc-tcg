@@ -1,4 +1,3 @@
-import ImmortalityBed from '../cards/bed-update/attach/immortality-bed'
 import {Card} from '../cards/types'
 import {CONFIG, DEBUG_CONFIG} from '../config'
 import {EXPANSIONS} from '../const/expansions'
@@ -35,26 +34,38 @@ export function validateDeck(deckCards: Array<Card>): ValidateDeckResult {
 	if (!hasHermit)
 		return {valid: false, reason: 'Deck must have at least one Hermit.'}
 
-	// Immortality Bed, or similar cards
-	const mythicDuplicates = deckCards.some(() => {
-		const mythics = [ImmortalityBed]
-		for (let i = 0; i < mythics.length; i++) {
-			let count = deckCards.filter(
-				(filterCard) => filterCard.numericId === mythics[i].numericId,
-			).length
-			if (count > 1) {
-				return mythics[i].name
-			}
-		}
-		return false
+	// Mythics
+	const mythicDuplicates = deckCards.some((card) => {
+		const duplicates = deckCards.filter(
+			(filterCard) => filterCard.rarity === 'mythic' &&
+			filterCard.numericId === card.numericId
+		)
+
+		return duplicates.length > limits.maxMythicDuplicates
 	})
 
 	if (mythicDuplicates) {
 		return {
 			valid: false,
-			reason: `You cannot have more than one copy of ${mythicDuplicates}.`, //@TODO Still have to make this return the name instead of true.
+			reason: `You cannot have more than one copy of mythic cards.`,
 		}
 	}
+
+	const tooManyMythics = deckCards.some(() => {
+		const count = deckCards.filter(
+			(filterCard) => filterCard.rarity === 'mythic'
+		)
+
+		return count.length > limits.maxMythics
+	})
+
+	if (tooManyMythics) {
+		return {
+			valid: false,
+			reason: `You cannot have more than 2 mythic cards in your deck.`,
+		}
+	}
+
 
 	// more than max duplicates
 	const tooManyDuplicates =

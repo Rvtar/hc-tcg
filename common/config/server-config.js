@@ -16,6 +16,8 @@ export default {
 		minCards: 42,
 		maxCards: 42,
 		maxDuplicates: 3,
+		maxMythicDuplicates: 1,
+		maxMythics: 2,
 		maxDeckCost: 42,
 		bannedCards: ['evilxisuma_boss', 'feather', 'item_any_rare'],
 		disabledCards: ['iskallman_common', 'iskallman_rare'],
