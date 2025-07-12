@@ -23,8 +23,6 @@ export type Card = {
 	id: string
 	category: CardCategoryT
 	expansion: ExpansionT
-	set: Array<ScuffedCategoryT> //Scuffed Category
-	update: number
 	numericId: number
 	name: string
 	shortName?: string
