@@ -7,8 +7,8 @@ const DreamRare: Hermit = {
 	numericId: 227,
 	name: 'Dream',
 	expansion: 'mcyt',
-	set: [],
-	update: 0,
+	
+	
 	rarity: 'rare',
 	tokens: 2,
 	type: ['speedrunner'],

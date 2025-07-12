@@ -16,8 +16,8 @@ const XBCraftedRare: Hermit = {
 	numericId: 51,
 	name: 'xB',
 	expansion: 'default',
-	set: ['Base Game'],
-	update: 0,
+	
+	
 	rarity: 'rare',
 	tokens: 1,
 	type: ['explorer'],

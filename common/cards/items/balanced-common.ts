@@ -13,8 +13,8 @@ const BalancedItem: Item = {
 	name: 'Balanced Item',
 	shortName: 'Balanced',
 	expansion: 'item',
-	set: ['Base Game'],
-	update: 0,
+	
+	
 	rarity: 'common',
 	tokens: 0,
 	type: ['balanced'],

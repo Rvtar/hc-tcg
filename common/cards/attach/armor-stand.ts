@@ -10,8 +10,8 @@ const ArmorStand: Attach & HasHealth = {
 	numericId: 111,
 	name: 'Armour Stand',
 	expansion: 'alter_egos',
-	set: ['Hermit', 'Improvised'],
-	update: 0,
+	
+	
 	rarity: 'ultra_rare',
 	tokens: 2,
 	health: 50,

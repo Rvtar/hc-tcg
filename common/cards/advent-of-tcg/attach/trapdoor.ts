@@ -26,8 +26,8 @@ const Trapdoor: Attach = {
 	numericId: 513,
 	name: 'Trapdoor',
 	expansion: 'minecraft',
-	set: ['Advent'],
-	update: 5,
+	
+	
 	rarity: 'rare',
 	tokens: 3,
 	description:

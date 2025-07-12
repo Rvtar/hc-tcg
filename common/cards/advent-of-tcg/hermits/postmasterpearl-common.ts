@@ -10,8 +10,8 @@ const PostmasterPearlCommon: Hermit = {
 	expansion: 'hc_plus',
 	palette: 'advent_of_tcg_ii',
 	background: 'advent_of_tcg_ii',
-	set: ['Advent'],
-	update: 10,
+	
+	
 	rarity: 'common',
 	tokens: 0,
 	type: ['builder'],

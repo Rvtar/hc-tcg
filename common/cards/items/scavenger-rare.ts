@@ -14,8 +14,8 @@ const ScavengerDoubleItem: Item = {
 	shortName: capitalize(convenience),
 	description: 'Counts as 2 ' + capitalize(convenience) + ' Item cards.',
 	expansion: 'item',
-	set: ['Scuffed'],
-	update: 0,
+	
+	
 	rarity: 'rare',
 	tokens: 2,
 	type: [convenience],

@@ -7,8 +7,8 @@ const IJevinCommon: Hermit = {
 	numericId: 27,
 	name: 'Jevin',
 	expansion: 'default',
-	set: ['Base Game'],
-	update: 0,
+	
+	
 	rarity: 'common',
 	tokens: 0,
 	type: ['explorer'],

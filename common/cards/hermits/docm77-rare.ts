@@ -11,8 +11,8 @@ const Docm77Rare: Hermit = {
 	numericId: 11,
 	name: 'Docm77',
 	expansion: 'default',
-	set: ['Base Game'],
-	update: 0,
+	
+	
 	rarity: 'rare',
 	tokens: 2,
 	type: ['farm'],

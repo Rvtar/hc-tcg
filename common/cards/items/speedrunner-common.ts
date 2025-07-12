@@ -13,8 +13,8 @@ const SpeedrunnerItem: Item = {
 	name: 'Speedrunner Item',
 	shortName: 'Speedrunner',
 	expansion: 'item',
-	set: ['Base Game'],
-	update: 0,
+	
+	
 	rarity: 'common',
 	tokens: 0,
 	type: ['speedrunner'],

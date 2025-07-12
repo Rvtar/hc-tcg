@@ -18,8 +18,8 @@ const VintageBeefUltraRare: Hermit = {
 	numericId: 5,
 	name: 'Beef',
 	expansion: 'default',
-	set: ['Base Game'],
-	update: 0,
+	
+	
 	rarity: 'ultra_rare',
 	tokens: 2,
 	type: ['explorer'],

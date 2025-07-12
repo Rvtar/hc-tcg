@@ -12,8 +12,8 @@ const GeminiTayRare: Hermit = {
 	numericId: 18,
 	name: 'Gem',
 	expansion: 'default',
-	set: ['Base Game'],
-	update: 0,
+	
+	
 	rarity: 'rare',
 	tokens: 1,
 	type: ['terraform'],

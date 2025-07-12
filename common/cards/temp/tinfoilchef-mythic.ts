@@ -12,8 +12,8 @@ const TinFoilChefMythic: Hermit = {
 	numericId: 607,
 	name: 'TinFoilChef',
 	expansion: 'hc_plus',
-	set: [],
-	update: 7,
+	
+	
 	rarity: 'mythic',
 	tokens: 5,
 	type: ['miner'],

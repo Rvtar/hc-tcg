@@ -20,8 +20,8 @@ const SkizzlemanRare: Hermit = {
 	numericId: 1216,
 	name: 'Skizz',
 	expansion: 'default',
-	set: ['Future Hermits'],
-	update: 0,
+	
+	
 	rarity: 'rare',
 	tokens: 2,
 	type: ['builder'],

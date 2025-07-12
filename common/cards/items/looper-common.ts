@@ -13,8 +13,8 @@ const LooperItem: Item = {
 	name: capitalize(convenience) + ' Item',
 	shortName: capitalize(convenience),
 	expansion: 'item',
-	set: ['Scuffed'],
-	update: 0,
+	
+	
 	rarity: 'common',
 	tokens: 0,
 	type: [convenience],

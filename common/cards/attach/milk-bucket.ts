@@ -35,8 +35,8 @@ const MilkBucket: Attach & SingleUse = {
 	name: 'Milk Bucket',
 	category: 'attach',
 	expansion: 'default',
-	set: ['Food'],
-	update: 0,
+	
+	
 	rarity: 'common',
 	tokens: 0,
 	description:

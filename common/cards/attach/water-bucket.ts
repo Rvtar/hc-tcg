@@ -33,8 +33,8 @@ const WaterBucket: Attach & SingleUse = {
 	category: 'attach',
 	id: 'water_bucket',
 	expansion: 'default',
-	set: ['Food'],
-	update: 0,
+	
+	
 	numericId: 96,
 	name: 'Water Bucket',
 	rarity: 'common',

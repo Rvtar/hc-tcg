@@ -16,8 +16,8 @@ const BerryBush: Attach & HasHealth = {
 	numericId: 334,
 	name: 'Sweet Berry Bush',
 	expansion: 'decked_out',
-	set: ['Hermit'],
-	update: 3,
+	
+	
 	rarity: 'rare',
 	tokens: 2,
 	health: 30,

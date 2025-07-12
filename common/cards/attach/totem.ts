@@ -15,8 +15,8 @@ const Totem: Attach = {
 	numericId: 95,
 	name: 'Totem',
 	expansion: 'default',
-	set: [],
-	update: 0,
+	
+	
 	rarity: 'ultra_rare',
 	tokens: 2,
 	description:

@@ -14,8 +14,8 @@ const BalancedDoubleItem: Item = {
 	shortName: 'Balanced',
 	description: 'Counts as 2 Balanced Item cards.',
 	expansion: 'item',
-	set: ['Base Game'],
-	update: 0,
+	
+	
 	rarity: 'rare',
 	tokens: 2,
 	type: ['balanced'],

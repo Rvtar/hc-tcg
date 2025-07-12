@@ -9,8 +9,8 @@ const WormManCommon: Hermit = {
 	expansion: 'alter_egos',
 	background: 'alter_egos',
 	palette: 'alter_egos',
-	set: ['AE2'],
-	update: 0,
+	
+	
 	rarity: 'common',
 	tokens: 0,
 	type: ['terraform'],

@@ -16,8 +16,8 @@ const XisumavoidRare: Hermit = {
 	numericId: 53,
 	name: 'Xisuma',
 	expansion: 'default',
-	set: ['Base Game'],
-	update: 0,
+	
+	
 	rarity: 'rare',
 	tokens: 2,
 	type: ['redstone'],

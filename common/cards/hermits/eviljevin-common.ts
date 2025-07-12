@@ -9,8 +9,8 @@ const EvilJevinCommon: Hermit = {
 	expansion: 'alter_egos',
 	palette: 'alter_egos',
 	background: 'alter_egos',
-	set: ['AE1'],
-	update: 0,
+	
+	
 	rarity: 'common',
 	tokens: 0,
 	type: ['miner'],

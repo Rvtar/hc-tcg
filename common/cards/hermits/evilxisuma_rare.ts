@@ -30,8 +30,8 @@ const EvilXisumaRare: Hermit = {
 	expansion: 'alter_egos',
 	palette: 'alter_egos',
 	background: 'alter_egos',
-	set: ['AE1'],
-	update: 0,
+	
+	
 	tokens: 3,
 	type: ['balanced'],
 	health: 280,

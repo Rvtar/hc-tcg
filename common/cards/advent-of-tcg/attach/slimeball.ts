@@ -10,8 +10,8 @@ const Slimeball: Attach = {
 	id: 'slimeball',
 	numericId: 511,
 	name: 'Slimeball',
-	set: ['Food', 'Scrap'],
-	update: 5,
+	
+	
 	rarity: 'rare',
 	tokens: 0,
 	expansion: 'minecraft',

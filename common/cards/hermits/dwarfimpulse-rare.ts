@@ -21,8 +21,8 @@ const DwarfImpulseRare: Hermit = {
 	expansion: 'alter_egos',
 	background: 'alter_egos',
 	palette: 'alter_egos',
-	set: ['AE3'],
-	update: 0,
+	
+	
 	rarity: 'rare',
 	tokens: 1,
 	type: ['miner'],

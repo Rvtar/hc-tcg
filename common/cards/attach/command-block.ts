@@ -10,8 +10,8 @@ const CommandBlock: Attach = {
 	numericId: 114,
 	name: 'Command Block',
 	expansion: 'alter_egos',
-	set: ['Equipment'],
-	update: 0,
+	
+	
 	rarity: 'rare',
 	tokens: 0,
 	description:

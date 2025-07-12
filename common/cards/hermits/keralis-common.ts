@@ -7,8 +7,8 @@ const KeralisCommon: Hermit = {
 	numericId: 31,
 	name: 'Keralis',
 	expansion: 'default',
-	set: ['Base Game'],
-	update: 0,
+	
+	
 	rarity: 'common',
 	tokens: 0,
 	type: ['builder'],

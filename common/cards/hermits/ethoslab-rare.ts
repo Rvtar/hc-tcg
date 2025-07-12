@@ -17,8 +17,8 @@ const EthosLabRare: Hermit = {
 	numericId: 13,
 	name: 'Etho',
 	expansion: 'default',
-	set: ['Base Game'],
-	update: 0,
+	
+	
 	rarity: 'rare',
 	tokens: 3,
 	type: ['redstone'],
