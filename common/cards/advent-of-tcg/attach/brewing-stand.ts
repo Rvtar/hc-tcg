@@ -11,8 +11,7 @@ const BrewingStand: Attach = {
 	numericId: 503,
 	name: 'Brewing stand',
 	expansion: 'minecraft',
-	
-	
+
 	rarity: 'rare',
 	tokens: 1,
 	description:

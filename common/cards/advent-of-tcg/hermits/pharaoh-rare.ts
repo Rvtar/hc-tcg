@@ -24,8 +24,7 @@ const PharaohRare: Hermit = {
 	name: 'Pharaoh',
 	expansion: 'hc_plus',
 	palette: 'pharaoh',
-	
-	
+
 	rarity: 'rare',
 	tokens: 2,
 	type: ['balanced'],

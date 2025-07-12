@@ -13,8 +13,7 @@ const BalancedItem: Item = {
 	name: 'Balanced Item',
 	shortName: 'Balanced',
 	expansion: 'item',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['balanced'],

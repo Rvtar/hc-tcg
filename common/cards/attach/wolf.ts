@@ -11,8 +11,7 @@ const Wolf: Attach = {
 	numericId: 97,
 	name: 'Wolf',
 	expansion: 'default',
-	
-	
+
 	rarity: 'rare',
 	tokens: 1,
 	description:

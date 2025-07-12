@@ -13,8 +13,7 @@ const ShadeEERare: Hermit = {
 	expansion: 'alter_egos',
 	background: 'alter_egos',
 	palette: 'alter_egos',
-	
-	
+
 	rarity: 'rare',
 	tokens: 2,
 	type: ['redstone'],

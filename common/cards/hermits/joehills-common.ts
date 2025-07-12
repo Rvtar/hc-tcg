@@ -7,8 +7,7 @@ const JoeHillsCommon: Hermit = {
 	numericId: 29,
 	name: 'Joe',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['explorer'],

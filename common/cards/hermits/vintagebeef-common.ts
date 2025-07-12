@@ -7,8 +7,7 @@ const VintageBeefCommon: Hermit = {
 	numericId: 3,
 	name: 'Beef',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['balanced'],

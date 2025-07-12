@@ -19,8 +19,7 @@ const Smajor1995Rare: Hermit = {
 	expansion: 'mcyt',
 	palette: 'advent_of_tcg',
 	background: 'advent_of_tcg',
-	
-	
+
 	rarity: 'rare',
 	tokens: 0,
 	type: ['builder'],

@@ -17,8 +17,7 @@ const ShubbleYTRare: Hermit = {
 	expansion: 'mcyt',
 	palette: 'advent_of_tcg',
 	background: 'advent_of_tcg',
-	
-	
+
 	rarity: 'rare',
 	tokens: 1,
 	type: ['terraform'],

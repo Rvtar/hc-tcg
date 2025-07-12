@@ -7,8 +7,7 @@ const RendogCommon: Hermit = {
 	numericId: 37,
 	name: 'Rendog',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 1,
 	type: ['balanced'],

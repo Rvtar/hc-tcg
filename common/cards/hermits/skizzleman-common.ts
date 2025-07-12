@@ -7,8 +7,7 @@ const SkizzlemanCommon: Hermit = {
 	numericId: 1176,
 	name: 'Skizz',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['explorer'],

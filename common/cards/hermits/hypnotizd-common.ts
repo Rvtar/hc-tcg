@@ -7,8 +7,7 @@ const HypnotizdCommon: Hermit = {
 	numericId: 21,
 	name: 'Hypno',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 1,
 	type: ['balanced'],

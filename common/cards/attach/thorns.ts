@@ -2,7 +2,7 @@ import {CardComponent, ObserverComponent} from '../../components'
 import query from '../../components/query'
 import {ExpansionT} from '../../const/expansions'
 import {GameModel} from '../../models/game-model'
-import {CardRarityT, TokenCostT, ScuffedCategoryT} from '../../types/cards'
+import {CardRarityT, ScuffedCategoryT, TokenCostT} from '../../types/cards'
 import {beforeAttack, onTurnEnd} from '../../types/priorities'
 import {attach} from '../defaults'
 import {Attach} from '../types'
@@ -27,8 +27,7 @@ function getThorns(
 		numericId: props.numericId,
 		name: props.name,
 		expansion: props.expansion,
-		
-		
+
 		rarity: props.rarity,
 		tokens: props.tokens,
 		description: `When the Hermit this card is attached to takes damage, your opponent's active Hermit takes ${amount}hp damage.\nIgnores armour.`,
@@ -99,8 +98,7 @@ export const Thorns = getThorns(
 		numericId: 93,
 		name: 'Thorns',
 		expansion: 'default',
-		
-		
+
 		rarity: 'common',
 		tokens: 2,
 	},
@@ -113,8 +111,7 @@ export const ThornsII = getThorns(
 		numericId: 127,
 		name: 'Thorns II',
 		expansion: 'alter_egos',
-		
-		
+
 		rarity: 'rare',
 		tokens: 3,
 	},
@@ -127,8 +124,7 @@ export const ThornsIII = getThorns(
 		numericId: 128,
 		name: 'Thorns III',
 		expansion: 'alter_egos',
-		
-		
+
 		rarity: 'ultra_rare',
 		tokens: 4,
 	},

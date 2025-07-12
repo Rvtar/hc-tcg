@@ -13,8 +13,7 @@ const PacifistItem: Item = {
 	name: capitalize(convenience) + ' Item',
 	shortName: capitalize(convenience),
 	expansion: 'item',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: [convenience],

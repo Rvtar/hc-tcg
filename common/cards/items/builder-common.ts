@@ -13,8 +13,7 @@ const BuilderItem: Item = {
 	name: 'Builder Item',
 	shortName: 'Builder',
 	expansion: 'item',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['builder'],

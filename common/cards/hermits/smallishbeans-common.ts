@@ -7,8 +7,7 @@ const SmallishbeansCommon: Hermit = {
 	numericId: 1180,
 	name: 'Joel',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['pvp'],

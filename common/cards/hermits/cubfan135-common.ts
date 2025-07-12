@@ -7,8 +7,7 @@ const Cubfan135Common: Hermit = {
 	numericId: 8,
 	name: 'Cub',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['balanced'],

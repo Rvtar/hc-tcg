@@ -16,8 +16,7 @@ const VintageBeefRare: Hermit = {
 	numericId: 4,
 	name: 'Beef',
 	expansion: 'default',
-	
-	
+
 	rarity: 'rare',
 	tokens: 1,
 	type: ['builder'],

@@ -9,8 +9,7 @@ const OverseerCommon: Hermit = {
 	expansion: 'alter_egos',
 	background: 'alter_egos',
 	palette: 'alter_egos',
-	
-	
+
 	rarity: 'common',
 	tokens: 1,
 	type: ['miner'],

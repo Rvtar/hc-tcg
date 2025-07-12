@@ -14,8 +14,7 @@ const HypnotizdRare: Hermit = {
 	numericId: 22,
 	name: 'Hypno',
 	expansion: 'default',
-	
-	
+
 	rarity: 'rare',
 	tokens: 3,
 	type: ['miner'],

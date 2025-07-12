@@ -7,8 +7,7 @@ const StressMonster101Common: Hermit = {
 	numericId: 41,
 	name: 'Stress',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['builder'],

@@ -14,8 +14,7 @@ const CollectorDoubleItem: Item = {
 	shortName: capitalize(convenience),
 	description: 'Counts as 2 ' + capitalize(convenience) + ' Item cards.',
 	expansion: 'item',
-	
-	
+
 	rarity: 'rare',
 	tokens: 2,
 	type: [convenience],

@@ -13,8 +13,7 @@ const ExplorerItem: Item = {
 	name: 'Explorer Item',
 	shortName: 'Explorer',
 	expansion: 'item',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['explorer'],

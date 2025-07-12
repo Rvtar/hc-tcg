@@ -7,8 +7,7 @@ const EthosLabCommon: Hermit = {
 	numericId: 12,
 	name: 'Etho',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 1,
 	type: ['balanced'],

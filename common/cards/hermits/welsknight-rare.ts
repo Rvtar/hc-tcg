@@ -10,8 +10,7 @@ const WelsknightRare: Hermit = {
 	numericId: 49,
 	name: 'Wels',
 	expansion: 'default',
-	
-	
+
 	rarity: 'rare',
 	tokens: 2,
 	type: ['pvp'],

@@ -19,8 +19,7 @@ const SolidaritygamingRare: Hermit = {
 	expansion: 'mcyt',
 	palette: 'advent_of_tcg',
 	background: 'advent_of_tcg',
-	
-	
+
 	rarity: 'rare',
 	tokens: 2,
 	type: ['prankster'],

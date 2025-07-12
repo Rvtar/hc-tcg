@@ -15,8 +15,7 @@ const Furnace: Attach = {
 	numericId: 508,
 	name: 'Furnace',
 	expansion: 'minecraft',
-	
-	
+
 	rarity: 'rare',
 	tokens: 1,
 	description:

@@ -12,8 +12,7 @@ const PranksterItem: Item = {
 	name: 'Prankster Item',
 	shortName: 'Prankster',
 	expansion: 'item',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['prankster'],

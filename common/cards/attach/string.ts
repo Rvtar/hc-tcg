@@ -8,8 +8,7 @@ const String: Attach = {
 	numericId: 124,
 	name: 'String',
 	expansion: 'alter_egos',
-	
-	
+
 	category: 'attach',
 	rarity: 'rare',
 	tokens: 2,

@@ -13,8 +13,7 @@ const PvPItem: Item = {
 	name: 'PvP Item',
 	shortName: 'PvP',
 	expansion: 'item',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['pvp'],

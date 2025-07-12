@@ -14,8 +14,7 @@ const PoultryManRare: Hermit = {
 	expansion: 'alter_egos',
 	background: 'alter_egos',
 	palette: 'alter_egos',
-	
-	
+
 	rarity: 'rare',
 	tokens: 3,
 	type: ['farm'],

@@ -7,8 +7,7 @@ const ZombieCleoCommon: Hermit = {
 	numericId: 6,
 	name: 'Cleo',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['builder'],

@@ -340,10 +340,13 @@ function EditDeck({
 	//MISC
 	const initialDeckState = deck
 
-const filteredCards: LocalCardInstance[] = sortCardInstances(
+	const filteredCards: LocalCardInstance[] = sortCardInstances(
 		ALL_CARDS.filter((card_) => {
 			let card = CARDS[card_.id] as Card
-			let type = isHermit(card) || isItem(card) && card.type? card.type as [string] : null
+			let type =
+				isHermit(card) || (isItem(card) && card.type)
+					? (card.type as [string])
+					: null
 			return (
 				// Card Name Filter
 				card.name.toLowerCase().includes(deferredTextQuery.toLowerCase()) &&
@@ -351,8 +354,9 @@ const filteredCards: LocalCardInstance[] = sortCardInstances(
 				(rankQuery === '' || getCardRank(card.tokens) === rankQuery) &&
 				// Card Type Filter
 				(typeQuery === '' ||
-					((isHermit(card) || isItem(card)) &&
-						card.type? type?.includes(typeQuery) : typeQuery == 'null')) &&
+					((isHermit(card) || isItem(card)) && card.type
+						? type?.includes(typeQuery)
+						: typeQuery == 'null')) &&
 				// Card Expansion Filter
 				(expansionQuery.length === 0 ||
 					expansionQuery.includes(card.expansion)) &&

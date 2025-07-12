@@ -11,8 +11,7 @@ const Cubfan135Rare: Hermit = {
 	numericId: 9,
 	name: 'Cub',
 	expansion: 'default',
-	
-	
+
 	rarity: 'rare',
 	tokens: 1,
 	type: ['speedrunner'],

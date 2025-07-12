@@ -13,8 +13,7 @@ const PostmasterPearlRare: Hermit = {
 	expansion: 'hc_plus',
 	palette: 'advent_of_tcg_ii',
 	background: 'advent_of_tcg_ii',
-	
-	
+
 	rarity: 'rare',
 	tokens: 1,
 	type: ['explorer'],

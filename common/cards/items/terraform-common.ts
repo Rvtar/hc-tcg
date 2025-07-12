@@ -13,8 +13,7 @@ const TerraformItem: Item = {
 	name: 'Terraform Item',
 	shortName: 'Terraform',
 	expansion: 'item',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['terraform'],

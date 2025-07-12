@@ -14,8 +14,7 @@ const BuilderDoubleItem: Item = {
 	shortName: 'Builder',
 	description: 'Counts as 2 Builder Item cards.',
 	expansion: 'item',
-	
-	
+
 	rarity: 'rare',
 	tokens: 2,
 	type: ['builder'],

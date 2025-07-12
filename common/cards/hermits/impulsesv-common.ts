@@ -7,8 +7,7 @@ const ImpulseSVCommon: Hermit = {
 	numericId: 23,
 	name: 'Impulse',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['farm'],

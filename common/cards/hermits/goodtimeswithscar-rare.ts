@@ -18,8 +18,7 @@ const GoodTimesWithScarRare: Hermit = {
 	numericId: 40,
 	name: 'Scar',
 	expansion: 'default',
-	
-	
+
 	rarity: 'rare',
 	tokens: 1,
 	type: ['builder'],

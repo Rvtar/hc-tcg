@@ -7,8 +7,7 @@ const GoodTimesWithScarCommon: Hermit = {
 	numericId: 39,
 	name: 'Scar',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 1,
 	type: ['terraform'],

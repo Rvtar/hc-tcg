@@ -13,8 +13,7 @@ const MinerDoubleItem: Item = {
 	shortName: 'Miner',
 	description: 'Counts as 2 Miner Item cards.',
 	expansion: 'item',
-	
-	
+
 	rarity: 'rare',
 	tokens: 2,
 	type: ['miner'],

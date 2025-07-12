@@ -7,8 +7,7 @@ const XisumavoidCommon: Hermit = {
 	numericId: 52,
 	name: 'Xisuma',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['farm'],

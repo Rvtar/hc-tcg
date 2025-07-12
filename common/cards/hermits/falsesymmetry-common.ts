@@ -7,8 +7,7 @@ const FalseSymmetryCommon: Hermit = {
 	numericId: 15,
 	name: 'False',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['pvp'],

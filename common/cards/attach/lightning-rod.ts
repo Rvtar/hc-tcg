@@ -11,8 +11,7 @@ const LightningRod: Attach = {
 	numericId: 119,
 	name: 'Lightning Rod',
 	expansion: 'alter_egos',
-	
-	
+
 	rarity: 'rare',
 	tokens: 2,
 	description:

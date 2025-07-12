@@ -7,8 +7,7 @@ const WelsknightCommon: Hermit = {
 	numericId: 48,
 	name: 'Wels',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['builder'],

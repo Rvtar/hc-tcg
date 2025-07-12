@@ -7,8 +7,7 @@ const PearlescentMoonCommon: Hermit = {
 	numericId: 35,
 	name: 'Pearl',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['builder'],

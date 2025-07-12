@@ -10,8 +10,7 @@ const ZookeeperScarCommon: Hermit = {
 	expansion: 'hc_plus',
 	palette: 'advent_of_tcg_ii',
 	background: 'advent_of_tcg_ii',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['farm'],

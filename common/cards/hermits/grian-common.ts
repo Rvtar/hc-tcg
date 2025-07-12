@@ -7,8 +7,7 @@ const GrianCommon: Hermit = {
 	numericId: 19,
 	name: 'Grian',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['builder'],

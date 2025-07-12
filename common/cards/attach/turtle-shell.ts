@@ -40,8 +40,7 @@ const TurtleShell: Attach = {
 	numericId: 130,
 	name: 'Turtle Shell',
 	expansion: 'alter_egos',
-	
-	
+
 	rarity: 'rare',
 	tokens: 1,
 	description:

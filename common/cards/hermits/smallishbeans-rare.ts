@@ -16,8 +16,7 @@ const SmallishbeansRare: Hermit = {
 	numericId: 267,
 	name: 'Joel',
 	expansion: 'default',
-	
-	
+
 	rarity: 'rare',
 	tokens: 1,
 	type: ['explorer'],

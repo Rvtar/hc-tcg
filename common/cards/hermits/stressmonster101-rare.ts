@@ -10,8 +10,7 @@ const StressMonster101Rare: Hermit = {
 	numericId: 42,
 	name: 'Stress',
 	expansion: 'default',
-	
-	
+
 	rarity: 'rare',
 	tokens: 3,
 	type: ['prankster'],

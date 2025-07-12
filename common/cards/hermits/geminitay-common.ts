@@ -7,8 +7,7 @@ const GeminiTayCommon: Hermit = {
 	numericId: 17,
 	name: 'Gem',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 1,
 	type: ['builder'],

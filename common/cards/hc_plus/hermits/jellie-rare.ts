@@ -15,7 +15,9 @@ const pickCondition = query.every(
 	query.slot.hermit,
 )
 
-const scarIds = [39, 40, 220, 253, 418, 585, 614, 813, 1019, 1402, 1403, 1421, 1422, 1423] //@SUBSTITUTE Subbed cards for ids.
+const scarIds = [
+	39, 40, 220, 253, 418, 585, 614, 813, 1019, 1402, 1403, 1421, 1422, 1423,
+] //@SUBSTITUTE Subbed cards for ids.
 
 const JellieRare: Hermit = {
 	...hermit,
@@ -44,7 +46,7 @@ const JellieRare: Hermit = {
 		component: CardComponent,
 		observer: ObserverComponent,
 	) {
-		const { player } = component
+		const {player} = component
 
 		let pickedAfkSlot: SlotComponent | null = null
 

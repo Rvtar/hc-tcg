@@ -11,8 +11,7 @@ const Shield: Attach = {
 	numericId: 89,
 	name: 'Shield',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 2,
 	description:

@@ -20,8 +20,7 @@ const DungeonTangoRare: Hermit = {
 	expansion: 'hc_plus',
 	palette: 'advent_of_tcg',
 	background: 'advent_of_tcg',
-	
-	
+
 	rarity: 'rare',
 	tokens: 2,
 	type: ['miner'],

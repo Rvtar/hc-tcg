@@ -14,8 +14,7 @@ const ElderGuardian: Attach = {
 	id: 'elder_guardian',
 	name: 'Elder Guardian',
 	expansion: 'minecraft',
-	
-	
+
 	numericId: 1395,
 	rarity: 'rare',
 	tokens: 2,

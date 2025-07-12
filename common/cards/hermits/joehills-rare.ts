@@ -19,8 +19,7 @@ const JoeHillsRare: Hermit = {
 	numericId: 30,
 	name: 'Joe',
 	expansion: 'default',
-	
-	
+
 	rarity: 'rare',
 	tokens: 3,
 	type: ['farm'],

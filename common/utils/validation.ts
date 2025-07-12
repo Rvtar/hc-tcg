@@ -37,8 +37,9 @@ export function validateDeck(deckCards: Array<Card>): ValidateDeckResult {
 	// Mythics
 	const mythicDuplicates = deckCards.some((card) => {
 		const duplicates = deckCards.filter(
-			(filterCard) => filterCard.rarity === 'mythic' &&
-			filterCard.numericId === card.numericId
+			(filterCard) =>
+				filterCard.rarity === 'mythic' &&
+				filterCard.numericId === card.numericId,
 		)
 
 		return duplicates.length > limits.maxMythicDuplicates
@@ -53,7 +54,7 @@ export function validateDeck(deckCards: Array<Card>): ValidateDeckResult {
 
 	const tooManyMythics = deckCards.some(() => {
 		const count = deckCards.filter(
-			(filterCard) => filterCard.rarity === 'mythic'
+			(filterCard) => filterCard.rarity === 'mythic',
 		)
 
 		return count.length > limits.maxMythics
@@ -65,7 +66,6 @@ export function validateDeck(deckCards: Array<Card>): ValidateDeckResult {
 			reason: `You cannot have more than 2 mythic cards in your deck.`,
 		}
 	}
-
 
 	// more than max duplicates
 	const tooManyDuplicates =

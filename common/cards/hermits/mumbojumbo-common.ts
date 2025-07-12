@@ -7,8 +7,7 @@ const MumboJumboCommon: Hermit = {
 	numericId: 33,
 	name: 'Mumbo',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['redstone'],

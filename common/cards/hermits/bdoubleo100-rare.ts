@@ -15,8 +15,7 @@ const BdoubleO100Rare: Hermit = {
 	numericId: 2,
 	name: 'Bdubs',
 	expansion: 'default',
-	
-	
+
 	rarity: 'rare',
 	tokens: 1,
 	type: ['balanced'],

@@ -38,7 +38,8 @@ export function getDeckCost(deckCards: Array<Card>) {
 		(card) => card.id === 'ethoslab_ultra_rare',
 	).length
 	let nonPvPItems = deckCards.filter(
-		(card) => isItem(card) && !card.type.includes('pvp') && !card.type.includes('any'),
+		(card) =>
+			isItem(card) && !card.type.includes('pvp') && !card.type.includes('any'),
 	).length
 	let ethoURCost = (nonPvPItems > 0 ? 3 : 2) * ethoURCards
 

@@ -17,8 +17,7 @@ const KeralisRare: Hermit = {
 	numericId: 32,
 	name: 'Keralis',
 	expansion: 'default',
-	
-	
+
 	rarity: 'rare',
 	tokens: 1,
 	type: ['terraform'],

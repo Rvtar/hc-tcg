@@ -13,7 +13,6 @@ import type {
 	CardRarityT,
 	HermitAttackInfo,
 	PlayCardLog,
-	ScuffedCategoryT,
 	TokenCostT,
 	TypeT,
 } from '../types/cards'

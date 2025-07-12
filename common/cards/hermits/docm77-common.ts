@@ -7,8 +7,7 @@ const Docm77Common: Hermit = {
 	numericId: 10,
 	name: 'Docm77',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['redstone'],

@@ -7,8 +7,7 @@ const BdoubleO100Common: Hermit = {
 	numericId: 1,
 	name: 'Bdubs',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['builder'],

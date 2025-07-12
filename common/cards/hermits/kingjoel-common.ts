@@ -9,8 +9,7 @@ const KingJoelCommon: Hermit = {
 	expansion: 'alter_egos',
 	background: 'alter_egos',
 	palette: 'alter_egos',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['terraform'],

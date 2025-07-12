@@ -10,8 +10,7 @@ const IJevinRare: Hermit = {
 	numericId: 28,
 	name: 'Jevin',
 	expansion: 'default',
-	
-	
+
 	rarity: 'rare',
 	tokens: 1,
 	type: ['speedrunner'],

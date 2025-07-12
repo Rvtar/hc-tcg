@@ -12,8 +12,7 @@ const MinerItem: Item = {
 	name: 'Miner Item',
 	shortName: 'Miner',
 	expansion: 'item',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['miner'],

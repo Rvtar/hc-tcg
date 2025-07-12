@@ -7,8 +7,7 @@ const XBCraftedCommon: Hermit = {
 	numericId: 50,
 	name: 'xB',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['pvp'],

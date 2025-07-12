@@ -13,8 +13,7 @@ const FarmItem: Item = {
 	name: 'Farm Item',
 	shortName: 'Farm',
 	expansion: 'item',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['farm'],

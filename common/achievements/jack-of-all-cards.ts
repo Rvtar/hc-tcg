@@ -4,7 +4,9 @@ import {Goal} from '../types/achievements'
 import {achievement} from './defaults'
 import {Achievement} from './types'
 
-const update0Cards = CARDS_LIST.filter((card) => card.numericId >= 0 && card.numericId <= 196)
+const update0Cards = CARDS_LIST.filter(
+	(card) => card.numericId >= 0 && card.numericId <= 196,
+)
 update0Cards.sort((cardA, cardB) => cardA.numericId - cardB.numericId)
 
 const AllCards: Achievement = {
@@ -32,7 +34,7 @@ const AllCards: Achievement = {
 				if (card.rarity === 'common') return '(Common)'
 				if (card.rarity === 'rare') return '(Rare)'
 				if (card.rarity === 'ultra_rare') return '(Ultra Rare)'
-    if (card.rarity === 'mythic') return '(Mythic)'
+				if (card.rarity === 'mythic') return '(Mythic)'
 			}
 
 			const rarity = getRarity()

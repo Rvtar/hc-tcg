@@ -7,8 +7,7 @@ const TangoTekCommon: Hermit = {
 	numericId: 43,
 	name: 'Tango',
 	expansion: 'default',
-	
-	
+
 	rarity: 'common',
 	tokens: 0,
 	type: ['redstone'],
