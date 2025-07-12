@@ -3,7 +3,6 @@ import {CardComponent, ObserverComponent} from '../../../components'
 import {GameModel} from '../../../models/game-model'
 import {attach} from '../../defaults'
 import {Attach, Hermit} from '../../types'
-import {TypeT} from '../../../types/cards'
 
 const CorruptionBed: Attach = {
 	...attach,
@@ -45,12 +44,12 @@ const CorruptionBed: Attach = {
 			if (!(new_card as Hermit).type) {
 				if (!itemTypes.includes(null)) return
 			}
-			if (itemTypes.filter(type => (new_card as Hermit).type?.includes(type)))
-			game.components.new(
-				CardComponent,
-				new_card,
-				component.slot.row.hermitSlot.entity,
-			)
+			if (itemTypes.filter((type) => (new_card as Hermit).type?.includes(type)))
+				game.components.new(
+					CardComponent,
+					new_card,
+					component.slot.row.hermitSlot.entity,
+				)
 			game.components.delete(hermit.entity)
 		}
 		tryUpgrade()
