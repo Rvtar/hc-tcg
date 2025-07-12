@@ -3,6 +3,7 @@ import {CardComponent, ObserverComponent} from '../../../components'
 import {GameModel} from '../../../models/game-model'
 import {attach} from '../../defaults'
 import {Attach, Hermit} from '../../types'
+import {TypeT} from '../../../types/cards'
 
 const CorruptionBed: Attach = {
 	...attach,
@@ -29,11 +30,22 @@ const CorruptionBed: Attach = {
 			const new_id = hermit.props.id.replace('common', 'rare')
 			const new_card = CARDS[new_id]
 			if (!new_card) return
-			const items = component.slot.row
-				.getItems()
-				.map((card) => card.props.id)
-				.join(' ')
-			if (!items.includes((new_card as Hermit).type)) return
+			const items = component.slot.row.getItems()
+			let itemTypes: Array<any> = []
+			for (let i = 0; i < items.length; i++) {
+				let item = items[i]
+				if (item.isItem()) {
+					if (item.props.type) {
+						itemTypes.concat(item.props.type)
+					} else {
+						itemTypes.push(null)
+					}
+				}
+			}
+			if (!(new_card as Hermit).type) {
+				if (!itemTypes.includes(null)) return
+			}
+			if (itemTypes.filter(type => (new_card as Hermit).type?.includes(type)))
 			game.components.new(
 				CardComponent,
 				new_card,

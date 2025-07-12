@@ -16,8 +16,6 @@ function getThorns(
 		numericId: number
 		tokens: TokenCostT
 		expansion: ExpansionT
-		set: ScuffedCategoryT[]
-		update: number
 	},
 	amount: number,
 ): Attach {
@@ -27,7 +25,6 @@ function getThorns(
 		numericId: props.numericId,
 		name: props.name,
 		expansion: props.expansion,
-
 		rarity: props.rarity,
 		tokens: props.tokens,
 		description: `When the Hermit this card is attached to takes damage, your opponent's active Hermit takes ${amount}hp damage.\nIgnores armour.`,
@@ -98,7 +95,6 @@ export const Thorns = getThorns(
 		numericId: 93,
 		name: 'Thorns',
 		expansion: 'default',
-
 		rarity: 'common',
 		tokens: 2,
 	},
@@ -111,7 +107,6 @@ export const ThornsII = getThorns(
 		numericId: 127,
 		name: 'Thorns II',
 		expansion: 'alter_egos',
-
 		rarity: 'rare',
 		tokens: 3,
 	},
@@ -124,7 +119,6 @@ export const ThornsIII = getThorns(
 		numericId: 128,
 		name: 'Thorns III',
 		expansion: 'alter_egos',
-
 		rarity: 'ultra_rare',
 		tokens: 4,
 	},
