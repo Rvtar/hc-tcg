@@ -10,7 +10,7 @@ import {Attach} from '../../types'
 const PowerBed: Attach = {
 	...attach,
 	id: 'power_bed',
-	numericId: 0,
+	numericId: 1811,
 	name: 'Power Bed',
 	expansion: 'beds',
 	rarity: 'ultra_rare',
