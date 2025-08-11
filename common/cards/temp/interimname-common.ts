@@ -12,13 +12,13 @@ const InterimNameCommon: Hermit = {
 	type: ['redstone'],
 	health: 290,
 	primary: {
-		name: 'Due South',
+		name: 'Door to Nothing',
 		cost: ['redstone'],
 		damage: 60,
 		power: null,
 	},
 	secondary: {
-		name: 'Door to Nothing',
+		name: 'Due South',
 		cost: ['redstone', 'redstone'],
 		damage: 80,
 		power: null,
