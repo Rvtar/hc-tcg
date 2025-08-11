@@ -125,9 +125,10 @@ function blockKnockback(component: CardComponent, observer: ObserverComponent) {
 export const GoldArmor: Attach = {
 	...attach,
 	id: 'gold_armor',
-	numericId: 29,
+	numericId: 72,
 	name: 'Gold Armour',
 	expansion: 'default',
+
 	rarity: 'common',
 	tokens: 0,
 	description:
@@ -144,9 +145,10 @@ export const GoldArmor: Attach = {
 export const IronArmor: Attach = {
 	...attach,
 	id: 'iron_armor',
-	numericId: 45,
+	numericId: 78,
 	name: 'Iron Armour',
 	expansion: 'default',
+
 	rarity: 'common',
 	tokens: 2,
 	description:
@@ -163,9 +165,10 @@ export const IronArmor: Attach = {
 export const ChainmailArmor: Attach = {
 	...attach,
 	id: 'chainmail_armor',
-	numericId: 119,
+	numericId: 113,
 	name: 'Chainmail Armour',
 	expansion: 'alter_egos',
+
 	rarity: 'common',
 	tokens: 1,
 	description:
@@ -183,9 +186,10 @@ export const ChainmailArmor: Attach = {
 export const DiamondArmor: Attach = {
 	...attach,
 	id: 'diamond_armor',
-	numericId: 13,
+	numericId: 65,
 	name: 'Diamond Armour',
 	expansion: 'default',
+
 	rarity: 'rare',
 	tokens: 3,
 	description:
@@ -203,9 +207,10 @@ export const DiamondArmor: Attach = {
 export const NetheriteArmor: Attach = {
 	...attach,
 	id: 'netherite_armor',
-	numericId: 82,
+	numericId: 87,
 	name: 'Netherite Armour',
 	expansion: 'default',
+
 	rarity: 'ultra_rare',
 	tokens: 4,
 	description:

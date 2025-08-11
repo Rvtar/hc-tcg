@@ -45,7 +45,11 @@ export const getDeckTypes = (cards: Array<string>) => {
 	const parsedCards = parseDeckCards(cards)
 	const reducedCards = parsedCards.reduce((r: Array<string>, card) => {
 		if (!isHermit(card) && !isItem(card)) return r
-		if (!r.includes(card.type) && card.type !== 'any') r.push(card.type)
+		if (!card.type) return r
+		for (let i = 0; card.type.length; i++) {
+			let type = card.type[i]
+			if (!r.includes(type) && type !== 'any') r.push(type)
+		}
 		return r
 	}, [])
 	return reducedCards.join(', ')

@@ -7,7 +7,7 @@ import {Attach, Hermit} from '../../types'
 const CorruptionBed: Attach = {
 	...attach,
 	id: 'corruption_bed',
-	numericId: 272,
+	numericId: 1792,
 	expansion: 'beds',
 	name: 'Corruption bed',
 	rarity: 'ultra_rare',
@@ -29,16 +29,27 @@ const CorruptionBed: Attach = {
 			const new_id = hermit.props.id.replace('common', 'rare')
 			const new_card = CARDS[new_id]
 			if (!new_card) return
-			const items = component.slot.row
-				.getItems()
-				.map((card) => card.props.id)
-				.join(' ')
-			if (!items.includes((new_card as Hermit).type)) return
-			game.components.new(
-				CardComponent,
-				new_card,
-				component.slot.row.hermitSlot.entity,
-			)
+			const items = component.slot.row.getItems()
+			let itemTypes: Array<any> = []
+			for (let i = 0; i < items.length; i++) {
+				let item = items[i]
+				if (item.isItem()) {
+					if (item.props.type) {
+						itemTypes.concat(item.props.type)
+					} else {
+						itemTypes.push(null)
+					}
+				}
+			}
+			if (!(new_card as Hermit).type) {
+				if (!itemTypes.includes(null)) return
+			}
+			if (itemTypes.filter((type) => (new_card as Hermit).type?.includes(type)))
+				game.components.new(
+					CardComponent,
+					new_card,
+					component.slot.row.hermitSlot.entity,
+				)
 			game.components.delete(hermit.entity)
 		}
 		tryUpgrade()

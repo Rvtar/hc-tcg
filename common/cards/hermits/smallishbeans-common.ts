@@ -4,12 +4,13 @@ import {Hermit} from '../types'
 const SmallishbeansCommon: Hermit = {
 	...hermit,
 	id: 'smallishbeans_common',
-	numericId: 160,
+	numericId: 1180,
 	name: 'Joel',
-	expansion: 'season_x',
+	expansion: 'default',
+
 	rarity: 'common',
 	tokens: 0,
-	type: 'pvp',
+	type: ['pvp'],
 	health: 300,
 	primary: {
 		name: 'Shut Up',

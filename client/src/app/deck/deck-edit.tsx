@@ -29,19 +29,42 @@ import {cardGroupHeader} from './deck'
 import css from './deck.module.scss'
 import DeckLayout from './layout'
 
-const RANK_NAMES = ['any', 'stone', 'iron', 'gold', 'emerald', 'diamond']
+const RANK_NAMES = [
+	'any',
+	'stone',
+	'iron',
+	'gold',
+	'emerald',
+	'diamond',
+	'netherite',
+	'obsidian',
+]
+
 const ITEM_DECK_ICONS = [
 	'any',
+	'anarchist',
+	'athlete',
 	'balanced',
+	'bard',
 	'builder',
+	'challenger',
+	'collector',
+	'diplomat',
 	'explorer',
 	'farm',
+	'historian',
+	'inventor',
+	'looper',
 	'miner',
+	'pacifist',
 	'prankster',
 	'pvp',
 	'redstone',
+	'scavenger',
 	'speedrunner',
 	'terraform',
+	'mob',
+	'everything',
 ]
 
 const HERMIT_DECK_ICONS = [
@@ -114,10 +137,7 @@ const EXPANSION_NAMES = [
 			(card) =>
 				card.expansion === expansion &&
 				EXPANSIONS[expansion].disabled === false &&
-				!(
-					CONFIG.limits.bannedCards.includes(card.id) ||
-					CONFIG.limits.disabledCards.includes(card.id)
-				),
+				!CONFIG.limits.bannedCards.includes(card.id),
 		)
 	}),
 ]
@@ -234,10 +254,7 @@ const ALL_CARDS = sortCardInstances(
 		(card) =>
 			// Don't show disabled cards
 			EXPANSIONS[card.expansion].disabled === false &&
-			!(
-				CONFIG.limits.bannedCards.includes(card.id) ||
-				CONFIG.limits.disabledCards.includes(card.id)
-			),
+			!CONFIG.limits.bannedCards.includes(card.id),
 	).map(
 		(card): LocalCardInstance => ({
 			id: card.numericId,
@@ -326,6 +343,10 @@ function EditDeck({
 	const filteredCards: LocalCardInstance[] = sortCardInstances(
 		ALL_CARDS.filter((card_) => {
 			let card = CARDS[card_.id] as Card
+			let type =
+				isHermit(card) || (isItem(card) && card.type)
+					? (card.type as [string])
+					: null
 			return (
 				// Card Name Filter
 				card.name.toLowerCase().includes(deferredTextQuery.toLowerCase()) &&
@@ -333,9 +354,9 @@ function EditDeck({
 				(rankQuery === '' || getCardRank(card.tokens) === rankQuery) &&
 				// Card Type Filter
 				(typeQuery === '' ||
-					!(isHermit(card) || isItem(card)) ||
-					((isHermit(card) || isItem(card)) &&
-						card.type.includes(typeQuery))) &&
+					((isHermit(card) || isItem(card)) && card.type
+						? type?.includes(typeQuery)
+						: typeQuery == 'null')) &&
 				// Card Expansion Filter
 				(expansionQuery.length === 0 ||
 					expansionQuery.includes(card.expansion)) &&
@@ -344,7 +365,6 @@ function EditDeck({
 			)
 		}),
 	)
-
 	const selectedCards = {
 		hermits: loadedDeck.cards.filter(
 			(card) => CARDS[card.id].category === 'hermit',

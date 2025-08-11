@@ -8,7 +8,7 @@ import {Attach} from '../../types'
 const ImmortalityBed: Attach = {
 	...attach,
 	id: 'immortality_bed',
-	numericId: 265,
+	numericId: 1797,
 	expansion: 'beds',
 	name: 'Immortality Bed',
 	rarity: 'ultra_rare',

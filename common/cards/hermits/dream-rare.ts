@@ -4,16 +4,17 @@ import {Hermit} from '../types'
 const DreamRare: Hermit = {
 	...hermit,
 	id: 'dream_rare',
-	numericId: 117,
+	numericId: 227,
 	name: 'Dream',
-	expansion: 'dream',
+	expansion: 'mcyt',
+
 	rarity: 'rare',
-	tokens: 0,
-	type: 'speedrunner',
+	tokens: 2,
+	type: ['speedrunner'],
 	health: 290,
 	primary: {
 		name: "C'mere",
-		cost: ['speedrunner', 'any'],
+		cost: ['speedrunner'],
 		damage: 50,
 		power: null,
 	},

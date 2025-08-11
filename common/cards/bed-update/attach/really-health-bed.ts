@@ -15,7 +15,7 @@ import {Attach, Hermit} from '../../types'
 const ReallyHealthyBed: Attach = {
 	...attach,
 	id: 'really_healthy_bed',
-	numericId: 267,
+	numericId: 1799,
 	expansion: 'beds',
 	name: 'Really Healthy Bed',
 	rarity: 'ultra_rare',

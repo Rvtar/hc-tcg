@@ -1,14 +1,15 @@
 import adventOfTcgAttachCards from './advent-of-tcg/attach'
 import adventOfTcgHermitCards from './advent-of-tcg/hermits'
-import adventOfTcgItemCards from './advent-of-tcg/items'
 import adventOfTcgSingleUseCards from './advent-of-tcg/single-use'
 import defaultAttachCards from './attach'
 import bedUpdateAttachCards from './bed-update/attach'
 import bedUpdateSingleUseCards from './bed-update/single-use'
 import bossHermitCards from './boss/hermits'
 import defaultHermitCards from './hermits'
-import defaultItemCards from './items'
+import itemCards from './items'
+import shifttechHermits from './shifttech/hermits'
 import defaultSingleUseCards from './single-use'
+import tempHermits from './temp'
 import {Card} from './types'
 
 export const attachCardClasses: Array<Card> = [
@@ -21,12 +22,11 @@ export const hermitCardClasses: Array<Card> = [
 	...defaultHermitCards,
 	...adventOfTcgHermitCards,
 	...bossHermitCards,
+	...tempHermits,
+	...shifttechHermits,
 ]
 
-export const itemCardClasses: Array<Card> = [
-	...defaultItemCards,
-	...adventOfTcgItemCards,
-]
+export const itemCardClasses: Array<Card> = [...itemCards]
 
 export const singleUseCardClasses: Array<Card> = [
 	...defaultSingleUseCards,

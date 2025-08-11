@@ -1,12 +1,10 @@
 import {Card, isItem} from '../cards/types'
 import {RankT, TokenCostT} from '../types/cards'
 
-export function getCardVisualTokenCost(
-	tokens: TokenCostT,
-): 0 | 1 | 2 | 3 | 4 | 5 {
+export function getCardVisualTokenCost(tokens: TokenCostT): number {
 	if (tokens === 'wild') return 1
 	if (tokens === 'etho-ur') return 3
-	if (tokens === -1) return 0
+	if (tokens < 0) return 0
 	return tokens
 }
 
@@ -23,6 +21,8 @@ export function getCardRank(tokens: TokenCostT): RankT {
 	} else if (displayCost === 4) {
 		return 'diamond'
 	} else if (displayCost === 5) {
+		return 'netherite'
+	} else if (displayCost >= 6) {
 		return 'obsidian'
 	}
 	return 'stone'
@@ -38,7 +38,8 @@ export function getDeckCost(deckCards: Array<Card>) {
 		(card) => card.id === 'ethoslab_ultra_rare',
 	).length
 	let nonPvPItems = deckCards.filter(
-		(card) => isItem(card) && card.type !== 'pvp' && card.type !== 'any',
+		(card) =>
+			isItem(card) && !card.type.includes('pvp') && !card.type.includes('any'),
 	).length
 	let ethoURCost = (nonPvPItems > 0 ? 3 : 2) * ethoURCards
 

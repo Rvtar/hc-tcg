@@ -4,8 +4,10 @@ import {Goal} from '../types/achievements'
 import {achievement} from './defaults'
 import {Achievement} from './types'
 
-const defaultCards = CARDS_LIST.filter((card) => card.expansion === 'default')
-defaultCards.sort((cardA, cardB) => cardA.numericId - cardB.numericId)
+const update0Cards = CARDS_LIST.filter(
+	(card) => card.numericId >= 0 && card.numericId <= 196,
+)
+update0Cards.sort((cardA, cardB) => cardA.numericId - cardB.numericId)
 
 const AllCards: Achievement = {
 	...achievement,
@@ -15,8 +17,8 @@ const AllCards: Achievement = {
 	levels: [
 		{
 			name: 'Jack of All Cards',
-			description: 'Win a game using every card from the base set.',
-			steps: defaultCards.length,
+			description: 'Win a game using every card from update 0.',
+			steps: update0Cards.length,
 		},
 	],
 	getProgress(goals) {
@@ -25,13 +27,14 @@ const AllCards: Achievement = {
 	getGoals(goals) {
 		const outputGoals: Array<Goal> = []
 		CARDS_LIST.forEach((card) => {
-			if (card.expansion !== 'default') return
+			if (card.numericId > 196) return
 
 			const getRarity = () => {
 				if (card.category !== 'hermit') return ''
 				if (card.rarity === 'common') return '(Common)'
 				if (card.rarity === 'rare') return '(Rare)'
 				if (card.rarity === 'ultra_rare') return '(Ultra Rare)'
+				if (card.rarity === 'mythic') return '(Mythic)'
 			}
 
 			const rarity = getRarity()
@@ -47,7 +50,7 @@ const AllCards: Achievement = {
 		const playedCards: Set<Card['numericId']> = new Set()
 
 		observer.subscribe(player.hooks.onAttach, (card) => {
-			if (card.props.expansion !== 'default') return
+			if (card.props.numericId > 196) return
 			playedCards.add(card.props.numericId)
 		})
 

@@ -8,9 +8,10 @@ import {Attach} from '../types'
 const Wolf: Attach = {
 	...attach,
 	id: 'wolf',
-	numericId: 108,
+	numericId: 97,
 	name: 'Wolf',
 	expansion: 'default',
+
 	rarity: 'rare',
 	tokens: 1,
 	description:
