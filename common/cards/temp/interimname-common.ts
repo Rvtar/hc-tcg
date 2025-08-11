@@ -18,7 +18,7 @@ const InterimNameCommon: Hermit = {
 		power: null,
 	},
 	secondary: {
-		name: 'Trapdoor to Nothingness',
+		name: 'Door to Nothing',
 		cost: ['redstone', 'redstone'],
 		damage: 80,
 		power: null,
