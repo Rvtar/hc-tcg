@@ -14,7 +14,7 @@ const BoomerBdubsCommon: Hermit = {
 	rarity: 'common',
 	tokens: 0,
 	type: ['prankster'],
-	health: 1232,
+	health: 290,
 	primary: {
 		name: 'Blast Off',
 		cost: ['prankster'],
