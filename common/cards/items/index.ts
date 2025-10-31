@@ -1,32 +1,30 @@
 import {Card} from '../types'
-import AnarchistItem from './anarchist-common'
-import AnarchistDoubleItem from './anarchist-rare'
-import AthleteItem from './athlete-common'
-import AthleteDoubleItem from './athlete-rare'
+import ArtistItem from './artist-common'
+import ArtistDoubleItem from './artist-rare'
 import BalancedItem from './balanced-common'
 import BalancedDoubleItem from './balanced-rare'
-import BardItem from './bard-common'
-import BardDoubleItem from './bard-rare'
+import BDubsItem from './bdubs-common'
+import BDubsDoubleItem from './bdubs-rare'
 import BuilderItem from './builder-common'
 import BuilderDoubleItem from './builder-rare'
 import ChallengerItem from './challenger-common'
 import ChallengerDoubleItem from './challenger-rare'
-import CollectorItem from './collector-common'
-import CollectorDoubleItem from './collector-rare'
-import DiplomatItem from './diplomat-common'
-import DiplomatDoubleItem from './diplomat-rare'
 import ExplorerItem from './explorer-common'
 import ExplorerDoubleItem from './explorer-rare'
 import FarmItem from './farm-common'
 import FarmDoubleItem from './farm-rare'
 import HistorianItem from './historian-common'
 import HistorianDoubleItem from './historian-rare'
-import InventorItem from './inventor-common'
-import InventorDoubleItem from './inventor-rare'
+import LeaderItem from './leader-common'
+import LeaderDoubleItem from './leader-rare'
 import LooperItem from './looper-common'
 import LooperDoubleItem from './looper-rare'
+import MerchantItem from './merchant-common'
+import MerchantDoubleItem from './merchant-rare'
 import MinerItem from './miner-common'
 import MinerDoubleItem from './miner-rare'
+import MobberItem from './mobber-common'
+import MobberDoubleItem from './mobber-rare'
 import PacifistItem from './pacifist-common'
 import PacifistDoubleItem from './pacifist-rare'
 import PranksterItem from './prankster-common'
@@ -39,6 +37,8 @@ import ScavengerItem from './scavenger-common'
 import ScavengerDoubleItem from './scavenger-rare'
 import SpeedrunnerItem from './speedrunner-common'
 import SpeedrunnerDoubleItem from './speedrunner-rare'
+import SpyItem from './spy-common'
+import SpyDoubleItem from './spy-rare'
 import TerraformItem from './terraform-common'
 import TerraformDoubleItem from './terraform-rare'
 import WildItem from './wild-common'
@@ -57,30 +57,18 @@ const itemCardClasses: Array<Card> = [
 	ExplorerDoubleItem,
 	FarmItem,
 	FarmDoubleItem,
+	MinerItem,
+	MinerDoubleItem,
 	PvPItem,
 	PvPDoubleItem,
 	SpeedrunnerItem,
 	SpeedrunnerDoubleItem,
 	TerraformItem,
 	TerraformDoubleItem,
-	MinerItem,
-	MinerDoubleItem,
-	AnarchistItem,
-	AnarchistDoubleItem,
-	AthleteItem,
-	AthleteDoubleItem,
-	BardItem,
-	BardDoubleItem,
 	ChallengerItem,
 	ChallengerDoubleItem,
-	CollectorItem,
-	CollectorDoubleItem,
-	DiplomatItem,
-	DiplomatDoubleItem,
 	HistorianItem,
 	HistorianDoubleItem,
-	InventorItem,
-	InventorDoubleItem,
 	LooperItem,
 	LooperDoubleItem,
 	PacifistItem,
@@ -89,6 +77,18 @@ const itemCardClasses: Array<Card> = [
 	ScavengerDoubleItem,
 	WildItem,
 	WildDoubleItem,
+	ArtistItem,
+	ArtistDoubleItem,
+	BDubsItem,
+	BDubsDoubleItem,
+	LeaderItem,
+	LeaderDoubleItem,
+	MerchantItem,
+	MerchantDoubleItem,
+	MobberItem,
+	MobberDoubleItem,
+	SpyItem,
+	SpyDoubleItem,
 ]
 
 export default itemCardClasses
