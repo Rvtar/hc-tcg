@@ -1,26 +1,26 @@
-import {hermit} from '../defaults'
-import {Hermit} from '../types'
+import {hermit} from '../../defaults'
+import {Hermit} from '../../types'
 
 const InterimNameCommon: Hermit = {
 	...hermit,
 	id: 'interimname_common',
 	numericId: 131,
-	name: 'InterimName',
-	expansion: 'shifttech',
+	name: 'Interim',
+	expansion: 'bedrock-gang',
 	rarity: 'common',
 	tokens: 0,
 	type: ['redstone'],
 	health: 290,
 	primary: {
-		name: 'Door to Nothing',
+		name: 'Due South',
 		cost: ['redstone'],
 		damage: 60,
 		power: null,
 	},
 	secondary: {
-		name: 'Due South',
-		cost: ['redstone', 'redstone'],
-		damage: 80,
+		name: 'Trapdoor to Nothing',
+		cost: ['redstone', 'redstone', 'any'],
+		damage: 90,
 		power: null,
 	},
 }
