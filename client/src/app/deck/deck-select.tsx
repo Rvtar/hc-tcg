@@ -1,12 +1,12 @@
 import classNames from 'classnames'
 import {CARDS} from 'common/cards'
+import {getIconPath} from 'common/game/setup-game'
 import {ToastT} from 'common/types/app'
 import {Deck, Tag} from 'common/types/deck'
 import {sortCardInstances} from 'common/utils/cards'
 import {generateDatabaseCode} from 'common/utils/database-codes'
 import {getDeckTypes, sortDecks} from 'common/utils/decks'
 import {getDeckCost} from 'common/utils/ranks'
-import {getIconPath} from 'common/utils/state-gen'
 import {validateDeck} from 'common/utils/validation'
 import Accordion from 'components/accordion'
 import Button from 'components/button'
@@ -518,7 +518,7 @@ function SelectDeck({
 								<div className={css.dynamicSpace}></div>
 
 								<p className={classNames(css.cardCount)}>
-									{loadedDeck.cards.length}/{CONFIG.limits.maxCards}{' '}
+									{loadedDeck.cards.length}/{CONFIG.game.limits.maxCards}{' '}
 									<span className={css.hideOnMobile}>cards</span>
 								</p>
 								<div className={css.cardCount}>
@@ -526,7 +526,7 @@ function SelectDeck({
 										{getDeckCost(
 											loadedDeck.cards.map((card) => CARDS[card.id]),
 										)}
-										/{CONFIG.limits.maxDeckCost}{' '}
+										/{CONFIG.game.limits.maxDeckCost}{' '}
 										<span className={css.hideOnMobile}>tokens</span>
 									</p>
 								</div>
@@ -579,13 +579,13 @@ function SelectDeck({
 								</button>
 								<div className={css.mobileDeckStats}>
 									<div className={css.mobileDeckStat}>
-										{loadedDeck.cards.length}/{CONFIG.limits.maxCards}
+										{loadedDeck.cards.length}/{CONFIG.game.limits.maxCards}
 									</div>
 									<div className={classNames(css.mobileDeckStat, css.tokens)}>
 										{getDeckCost(
 											loadedDeck.cards.map((card) => CARDS[card.id]),
 										)}
-										/{CONFIG.limits.maxDeckCost}
+										/{CONFIG.game.limits.maxDeckCost}
 									</div>
 								</div>
 							</div>

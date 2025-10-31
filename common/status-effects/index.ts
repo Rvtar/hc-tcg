@@ -2,7 +2,7 @@ import {
 	AussiePingEffect as AussiePingEffect,
 	AussiePingImmuneEffect as AussiePingImmuneEffect,
 } from './aussie-ping'
-import BadOmenEffect from './badomen'
+import BadOmenEffect from './bad-omen'
 import BetrayedEffect from './betrayed'
 import ChromaKeyedEffect from './chroma-keyed'
 import CurseOfBindingEffect from './curse-of-binding'
@@ -48,6 +48,7 @@ import PostInspectorEffect from './post-inspector'
 import ProtectedEffect from './protected'
 import RoyalProtectionEffect from './royal-protection'
 import SheepStareEffect from './sheep-stare'
+import SingleUseBlockedEffect from './single-use-blocked'
 import {
 	PrimaryAttackDisabledEffect,
 	SecondaryAttackDisabledEffect,
@@ -123,6 +124,7 @@ export const STATUS_EFFECTS_LIST: Array<StatusEffect> = [
 	MelodyEffect,
 	LitFuseEffect,
 	OverhealEffect,
+	SingleUseBlockedEffect,
 	/* Hidden Status Effects */
 	TurnSkippedEffect,
 	GasLightEffect,

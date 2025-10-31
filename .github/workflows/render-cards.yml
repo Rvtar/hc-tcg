@@ -19,13 +19,16 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 2
 
+      - name: Install Image Magick
+        run: sudo apt-get install imagemagick -y
+
       - name: Install Playwright Browsers
         run: |
           npm install
           npx playwright install --with-deps firefox
 
-      - name: Create debug config
-        run: cp ./common/config/debug-config.example.js ./common/config/debug-config.js
+      - name: Create config file
+        run: cp ./config.example.js ./config.js
 
       - name: Build Cards
         run: npm run client:render-cards

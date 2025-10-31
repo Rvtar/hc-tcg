@@ -2,13 +2,10 @@ import {CardComponent, ObserverComponent} from '../../components'
 import query from '../../components/query'
 import {GameModel} from '../../models/game-model'
 import {beforeAttack} from '../../types/priorities'
-import {flipCoin} from '../../utils/coinFlips'
+import {flipCoin} from '../../utils/coin-flips'
 import {hermit} from '../defaults'
 import {Hermit} from '../types'
 
-/*
-- Beef confirmed that double damage condition includes other rare mumbos.
-*/
 const MumboJumboRare: Hermit = {
 	...hermit,
 	id: 'mumbojumbo_rare',
@@ -17,7 +14,7 @@ const MumboJumboRare: Hermit = {
 	expansion: 'default',
 
 	rarity: 'rare',
-	tokens: 4,
+	tokens: 3,
 	type: ['prankster'],
 	health: 290,
 	primary: {
@@ -31,7 +28,7 @@ const MumboJumboRare: Hermit = {
 		cost: ['prankster', 'prankster'],
 		damage: 40,
 		power:
-			'Flip a coin twice.\nDo an additional 20hp damage for every heads. Total attack damage doubles if you have at least one AFK Prankster on the game board.',
+			'Flip a coin twice.\nDo an additional 20hp damage for every heads. Total attack damage doubles if you have at least one AFK Base Set Prankster on the game board.',
 	},
 	onAttach(
 		game: GameModel,
@@ -54,6 +51,7 @@ const MumboJumboRare: Hermit = {
 					query.card.currentPlayer,
 					query.card.afk,
 					query.card.type('prankster'),
+					query.card.expansion('default'),
 				).length
 
 				attack.addDamage(component.entity, headsAmount * 20)

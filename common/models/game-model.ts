@@ -9,8 +9,13 @@ import {
 	StatusEffectComponent,
 } from '../components'
 import query, {ComponentQuery} from '../components/query'
-import {CONFIG, DEBUG_CONFIG} from '../config'
+import {CONFIG} from '../config'
 import {PlayerEntity, SlotEntity} from '../entities'
+import {
+	PlayerSetupDefs,
+	getGameState,
+	setupComponents,
+} from '../game/setup-game'
 import {
 	MultiturnPrimaryAttackDisabledEffect,
 	MultiturnSecondaryAttackDisabledEffect,
@@ -43,11 +48,6 @@ import {rowRevive} from '../types/priorities'
 import {PickRequest} from '../types/server-requests'
 import {newIncrementor} from '../utils/game'
 import {newRandomNumberGenerator} from '../utils/random'
-import {
-	PlayerSetupDefs,
-	getGameState,
-	setupComponents,
-} from '../utils/state-gen'
 import {AttackModel, ReadonlyAttackModel} from './attack-model'
 import {BattleLogModel} from './battle-log-model'
 
@@ -73,28 +73,32 @@ export type GameSettings = {
 	logErrorsToStderr: boolean
 	verboseLogging: boolean
 	disableRewardCards: boolean
+	gameTimeout: number
+	logAttackHistory: boolean
 }
 
 export function gameSettingsFromEnv(): GameSettings {
 	return {
-		maxTurnTime: CONFIG.limits.maxTurnTime,
-		extraActionTime: CONFIG.limits.extraActionTime,
-		showHooksState: DEBUG_CONFIG.showHooksState,
-		blockedActions: DEBUG_CONFIG.blockedActions,
-		availableActions: DEBUG_CONFIG.availableActions,
-		autoEndTurn: DEBUG_CONFIG.autoEndTurn,
-		disableDeckOut: DEBUG_CONFIG.disableDeckOut,
-		startWithAllCards: DEBUG_CONFIG.startWithAllCards,
-		unlimitedCards: DEBUG_CONFIG.unlimitedCards,
-		oneShotMode: DEBUG_CONFIG.oneShotMode,
-		extraStartingCards: DEBUG_CONFIG.extraStartingCards,
-		disableDamage: DEBUG_CONFIG.disableDamage,
-		noItemRequirements: DEBUG_CONFIG.noItemRequirements,
-		forceCoinFlip: DEBUG_CONFIG.forceCoinFlip,
-		shuffleDeck: DEBUG_CONFIG.shuffleDeck,
-		logErrorsToStderr: DEBUG_CONFIG.logErrorsToStderr,
-		verboseLogging: DEBUG_CONFIG.verboseLogging,
-		disableRewardCards: DEBUG_CONFIG.disableRewardCards,
+		maxTurnTime: CONFIG.game.limits.maxTurnTime,
+		extraActionTime: CONFIG.game.limits.extraActionTime,
+		showHooksState: CONFIG.game.showHooksState,
+		blockedActions: CONFIG.game.blockedActions,
+		availableActions: CONFIG.game.availableActions,
+		autoEndTurn: CONFIG.game.autoEndTurn,
+		disableDeckOut: CONFIG.game.disableDeckOut,
+		startWithAllCards: CONFIG.game.startWithAllCards,
+		unlimitedCards: CONFIG.game.unlimitedCards,
+		oneShotMode: CONFIG.game.oneShotMode,
+		extraStartingCards: CONFIG.game.extraStartingCards,
+		disableDamage: CONFIG.game.disableDamage,
+		noItemRequirements: CONFIG.game.noItemRequirements,
+		forceCoinFlip: CONFIG.game.forceCoinFlip,
+		shuffleDeck: CONFIG.game.shuffleDeck,
+		logErrorsToStderr: CONFIG.game.logErrorsToStderr,
+		verboseLogging: CONFIG.game.verboseLogging,
+		disableRewardCards: CONFIG.game.disableRewardCards,
+		gameTimeout: CONFIG.game.limits.gameTimeout,
+		logAttackHistory: CONFIG.game.logAttackHistory,
 	}
 }
 

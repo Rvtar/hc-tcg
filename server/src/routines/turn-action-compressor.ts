@@ -1,5 +1,8 @@
 import assert from 'assert'
-import serverConfig from 'common/config/server-config'
+import {CONFIG} from 'common/config'
+import {GameControllerProps} from 'common/game/game-controller'
+import runGame from 'common/game/run-game'
+import {PlayerSetupDefs} from 'common/game/setup-game'
 import {
 	BoardSlotComponent,
 	CardComponent,
@@ -28,9 +31,7 @@ import {
 	PlayCardActionData,
 	WaitActionData,
 } from '../../../common/types/turn-action-data'
-import {PlayerSetupDefs} from '../../../common/utils/state-gen'
-import {GameController, GameControllerProps} from '../game-controller'
-import runGame from './game'
+import {ServerSideGameController} from '../serverside-game-controller'
 
 const VARIABLE_BYTE_MAX = 1 // 0xFF
 const INVALID_REPLAY = 0x00
@@ -743,7 +744,7 @@ export class TurnActionCompressor {
 	}
 
 	public async turnActionsToBuffer(
-		controller: GameController,
+		controller: ServerSideGameController,
 	): Promise<Buffer> {
 		const originalGame = controller.game as GameModel
 
@@ -751,7 +752,7 @@ export class TurnActionCompressor {
 
 		const secondPlayerSetupDefs: PlayerSetupDefs = controller.player2Defs
 
-		const newGameController = new GameController(
+		const newGameController = new ServerSideGameController(
 			firstPlayerSetupDefs,
 			secondPlayerSetupDefs,
 			{
@@ -792,10 +793,7 @@ export class TurnActionCompressor {
 
 		this.currentAction = null
 
-		return Buffer.concat([
-			Buffer.from([serverConfig.replayVersion]),
-			...buffers,
-		])
+		return Buffer.concat([Buffer.from([CONFIG.game.replayVersion]), ...buffers])
 	}
 
 	public async bufferToTurnActions(
@@ -813,7 +811,7 @@ export class TurnActionCompressor {
 				battleLog: Array<Message>
 		  }
 	> {
-		const con = new GameController(
+		const con = new ServerSideGameController(
 			firstPlayerSetupDefs,
 			secondPlayerSetupDefs,
 			{

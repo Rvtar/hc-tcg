@@ -8,8 +8,9 @@ import assert from 'assert'
 import {ACHIEVEMENTS} from 'common/achievements'
 import {CARDS} from 'common/cards'
 import {getStarterPack} from 'common/cards/starter-decks'
-import serverConfig from 'common/config/server-config'
+import {CONFIG} from 'common/config'
 import {defaultAppearance} from 'common/cosmetics/default'
+import {PlayerSetupDefs} from 'common/game/setup-game'
 import {AchievementProgress, EarnedAchievement} from 'common/types/achievements'
 import {TypeT} from 'common/types/cards'
 import {
@@ -29,7 +30,6 @@ import {
 import {GameOutcome, Message} from 'common/types/game-state'
 import {NumberOrNull, generateDatabaseCode} from 'common/utils/database-codes'
 import {newRandomNumberGenerator} from 'common/utils/random'
-import {PlayerSetupDefs} from 'common/utils/state-gen'
 import {huffmanCompress, huffmanDecompress} from '../../src/utils/compression'
 import {
 	ReplayActionData,
@@ -975,7 +975,7 @@ export class Database {
 					const decompressedReplay = huffmanDecompress(replay)
 					if (
 						decompressedReplay &&
-						decompressedReplay.readUInt8(0) === serverConfig.replayVersion
+						decompressedReplay.readUInt8(0) === CONFIG.game.replayVersion
 					) {
 						hasReplay = true
 					}
@@ -1084,7 +1084,7 @@ export class Database {
 			if (
 				!decompressedReplay ||
 				decompressedReplay.length < 2 ||
-				decompressedReplay.readUintBE(0, 1) !== serverConfig.replayVersion
+				decompressedReplay.readUintBE(0, 1) !== CONFIG.game.replayVersion
 			) {
 				return {type: 'failure', reason: 'The game requested has no replay.'}
 			}
@@ -2277,6 +2277,42 @@ export class Database {
 			return {
 				type: 'failure',
 				reason: `${e}`,
+			}
+		}
+	}
+
+	public async resetSecret(
+		uuid: string,
+	): Promise<DatabaseResult<{secret: string}>> {
+		try {
+			const secret = (await this.pool.query('SELECT * FROM uuid_generate_v4()'))
+				.rows[0]['uuid_generate_v4']
+
+			const result = await this.pool.query(
+				`
+					UPDATE users
+					SET secret = crypt($2, gen_salt('bf', $3))
+					WHERE user_id = $1;
+				`,
+				[uuid, secret, this.bfDepth],
+			)
+
+			if (result.rowCount !== 1) {
+				return {
+					type: 'failure',
+				}
+			}
+
+			return {
+				type: 'success',
+				body: {
+					secret: secret,
+				},
+			}
+		} catch (e) {
+			console.log(e)
+			return {
+				type: 'failure',
 			}
 		}
 	}

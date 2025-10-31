@@ -4,42 +4,52 @@ An unofficial implementation of [Vintage Beef](https://www.youtube.com/@VintageB
 
 ## Node.js
 
-Use Node.js 16-18 (19+ is not supported).
+Use Node.js 20+.
+If you don't have Node.js yet we recommend using [nvm](https://github.com/nvm-sh/nvm) or [asdf](https://asdf-vm.com/).
 
-If you don't have Node.js yet we recommend using [nvm](https://github.com/nvm-sh/nvm).
+## Set Up Dev Environment
 
-## How to run Hermitcraft TCG
+<details>
+<summary>Run project with docker (reccomended)</summary>
+<br>
 
-```sh
-npm ci                      # install packages
-npm run build-dev           # build a developement build of the client
-npm run build-dev-windows   # build a developement build of the client on windows
-npm run server              # start the sever
+First you will need to create the debug config file.  To do this, run `cp ./config.example.js ./config.js` on Linux, and `copy ./config.example.js ./config.js` on Windows.
+
+You can then use the following command:
+```
+npm run docker-dev          # start the docker development image
 ```
 
-_Please use `npm ci` instead of instead of `npm install` to avoid unneccesary changes in package-lock.json._
+By default, the client is hosted on port 3002. This image will automatically setup the postgres database for you.
+</details>
+
+
+<details>
+<summary>Run project without docker</summary>
+<br>
 
 ## Running in your development environment
 
-Before you can run the game locally, you will need to create the debug config file. To do this, run `cp ./common/config/debug-config.example.js ./common/config/debug-config.js` on Linux, and `copy ./common/config/debug-config.example.js ./common/config/debug-config.js` on Windows.
+Certain functions will not work if postgres is not installed. To develop parts of the game that interact with the database,
+install [postgresql](https://www.postgresql.org/). You will then need to setup a postgres user named `hctcg`.
+
+First you will need to create the debug config file.  To do this, run `cp ./config.example.js ./config.js` on Linux, and `copy ./config.example.js ./config.js` on Windows.
+You can then use the following commands:
 
 ```sh
 npm ci               # install packages
 
+npm run dev          # start both the client and server
+
 npm run server:dev   # start the server and update automatically when you make changes
 npm run client:dev   # start the client and update automatically when you make changes
-
-npm run dev          # start both the client and server
-```
-
-If you need to test code that interacts with the database, you can use our development docker compose file:
-```
-# docker-compose -f docker-compose-dev.yml up
 ```
 
 _Please use `npm ci` instead of instead of `npm install` to avoid unneccesary changes in package-lock.json._
 
 By default, the client is hosted on port 4002. This is different from basegame port (3002).
+
+</details>
 
 ## How To & Architecture
 
@@ -47,44 +57,7 @@ See [docs/README.md](./docs/README.md).
 
 ## Configuration
 
-### Server Config
-
-Your instance can be configured using the `common/config/server-config.js` file.
-
-| Key           | Description                                                                         |
-| ------------- | ----------------------------------------------------------------------------------- |
-| port          | Server port                                                                         |
-| clientDevPort | Port for vite client server                                                         |
-| clientPath    | Path for the client build used                                                      |
-| cors          | Useful when testing on local network or when your server runs on a different domain |
-| world         | Identifier for your instance when tracking stats                                    |
-| limits        | Limits for players' decks                                                           |
-| logoSubText   | Animated text to show next to logo                                                  |
-| botUrl        | Url to report game results to                                                       |
-| version       | Version displayed on the client                                                     |
-
-### Debug Config
-
-You can configure debug settings using `common/config/debug-config.js`. See the developement environment section for instructions on how to creat this file.
-
-| Key                   | Description                                                                 |
-| --------------------- | --------------------------------------------------------------------------- |
-| disableDeckValidation | Disable deck validation                                                     |
-| extraStartingCards    | Add extra cards into your hand at the start of the game.                    |
-| noItemRequirements    | Remove item requirements for attacks.                                       |
-| forceCoinFlip         | Force coinflips to always roll heads.                                       |
-| oneShotMode           | All attacks will instantly knock out their target.                          |
-| disableDamage         | Disable attacks from dealing damage.                                        |
-| disableDeckOut        | Disable the deck out win condition.                                         |
-| startWithAllCards     | Start the game with every card in your deck. Also disables deck out.        |
-| unlimitedCards        | Start the game with every card in the game. Also disables deck out.         |
-| blockedActions        | Block specific actions every turn.                                          |
-| availableActions      | Make specific actions available every turn.                                 |
-| shuffleDeck           | Shuffe the player's decks at the start of the game.                         |
-| logErrorsToStderr     | Log assertion errors in turn acitons to stderr instead of throwing them.    |
-| showHooksState        | Show hooks in the console.                                                  |
-| autoEndTurn           | When you have no actions left, automatically switch to the opponent's turn. |
-| statsUrl              | URL to use for the Hall of Fame.                                            |
+See `./config.example.js`
 
 ### Formatting & coding style
 
@@ -117,9 +90,13 @@ npm run test:fuzz           # run fuzz tests (see tests/README.md for more detai
 # Building & Self Hosting
 
 To build you must run these commands:
+```sh
+npm ci                      # install packages
+npm run build-dev           # build a developement build of the client
+npm run build-dev-windows   # build a developement build of the client on windows
 ```
-npm run build
-```
+
+_Please use `npm ci` instead of instead of `npm install` to avoid unneccesary changes in package-lock.json._
 
 To build the cards you must have `sh` and `imagemagick` installed along with the project dependencies.
 ```
@@ -141,3 +118,4 @@ docker-compose up -d
 ```
 
 By default, the server will listen to requests on port 9000.  The instance can be backed up by backing up the contents of /etc/hctcg (or whatever directory you specify).
+

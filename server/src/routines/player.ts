@@ -1,7 +1,9 @@
 import {ACHIEVEMENTS} from 'common/achievements'
-import {DEBUG_CONFIG} from 'common/config'
+import {CONFIG} from 'common/config'
 import {COSMETICS} from 'common/cosmetics'
 import {Background, Border, Coin, Heart, Title} from 'common/cosmetics/types'
+import {GameController} from 'common/game/game-controller'
+import {getLocalGameState} from 'common/game/make-local-state'
 import {PlayerId, PlayerModel} from 'common/models/player-model'
 import {
 	RecievedClientMessage,
@@ -16,11 +18,9 @@ import {
 	setMinecraftName,
 	setUsername,
 } from 'db/db-reciever'
-import {GameController} from 'game-controller'
 import {LocalMessage, LocalMessageTable, localMessages} from 'messages'
 import {getGame} from 'selectors'
-import {delay, put, race, select, take} from 'typed-redux-saga'
-import {getLocalGameState} from 'utils/state-gen'
+import {call, delay, put, race, select, take} from 'typed-redux-saga'
 import root from '../serverRoot'
 import {broadcast} from '../utils/comm'
 
@@ -197,7 +197,7 @@ export function* updateCosmeticSaga(
 				cosmetic.requires.level || 0
 			]
 	}
-	if (DEBUG_CONFIG.unlockAllCosmetics) isUnlocked = true
+	if (CONFIG.unlockAllCosmetics) isUnlocked = true
 	if (!cosmetic || !isUnlocked) {
 		broadcast([player], {type: serverMessages.COSMETICS_INVALID})
 	}
@@ -222,5 +222,30 @@ export function* updateCosmeticSaga(
 	broadcast([player], {
 		type: serverMessages.COSMETICS_UPDATE,
 		appearance: player.appearance,
+	})
+}
+
+export function* resetSecret(
+	action: RecievedClientMessage<typeof clientMessages.RESET_SECRET>,
+) {
+	const player = root.players[action.playerId]
+	const {uuid} = player
+
+	const secret = yield* call([root.db, root.db.resetSecret], uuid)
+
+	if (secret.type === 'failure') {
+		broadcast([player], {
+			type: serverMessages.TOAST_SEND,
+			title: 'Could not reset',
+			description:
+				'Failed to reset user secret, try logging out and then back in.',
+			image: 'images/icons/warning_icon.png',
+		})
+		return
+	}
+
+	broadcast([player], {
+		type: serverMessages.SECRET_RESET,
+		...secret.body,
 	})
 }

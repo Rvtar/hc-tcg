@@ -7,7 +7,7 @@ import query from '../../components/query'
 import {GameModel} from '../../models/game-model'
 import FireEffect from '../../status-effects/fire'
 import {beforeAttack} from '../../types/priorities'
-import {flipCoin} from '../../utils/coinFlips'
+import {flipCoin} from '../../utils/coin-flips'
 import {hermit} from '../defaults'
 import {Hermit} from '../types'
 
@@ -17,10 +17,9 @@ const EthosLabRare: Hermit = {
 	numericId: 13,
 	name: 'Etho',
 	expansion: 'default',
-
-	rarity: 'rare',
-	tokens: 3,
 	type: ['redstone'],
+	rarity: 'rare',
+	tokens: 2,
 	health: 280,
 	primary: {
 		name: 'Oh Snappers',

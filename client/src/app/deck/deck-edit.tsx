@@ -3,12 +3,12 @@ import {CARDS, CARDS_LIST} from 'common/cards'
 import {Card, isHermit, isItem} from 'common/cards/types'
 import {EXPANSIONS, ExpansionT} from 'common/const/expansions'
 import {CardEntity, newEntity} from 'common/entities'
+import {getIconPath} from 'common/game/setup-game'
 import {Deck, Tag} from 'common/types/deck'
 import {LocalCardInstance} from 'common/types/server-requests'
 import {sortCardInstances} from 'common/utils/cards'
 import {generateDatabaseCode} from 'common/utils/database-codes'
 import {getCardRank, getDeckCost} from 'common/utils/ranks'
-import {getIconPath} from 'common/utils/state-gen'
 import {validateDeck} from 'common/utils/validation'
 import Accordion from 'components/accordion'
 import Button from 'components/button'
@@ -29,42 +29,19 @@ import {cardGroupHeader} from './deck'
 import css from './deck.module.scss'
 import DeckLayout from './layout'
 
-const RANK_NAMES = [
-	'any',
-	'stone',
-	'iron',
-	'gold',
-	'emerald',
-	'diamond',
-	'netherite',
-	'obsidian',
-]
-
+const RANK_NAMES = ['any', 'stone', 'iron', 'gold', 'emerald', 'diamond']
 const ITEM_DECK_ICONS = [
 	'any',
-	'anarchist',
-	'athlete',
 	'balanced',
-	'bard',
 	'builder',
-	'challenger',
-	'collector',
-	'diplomat',
 	'explorer',
 	'farm',
-	'historian',
-	'inventor',
-	'looper',
 	'miner',
-	'pacifist',
 	'prankster',
 	'pvp',
 	'redstone',
-	'scavenger',
 	'speedrunner',
 	'terraform',
-	'mob',
-	'everything',
 ]
 
 const HERMIT_DECK_ICONS = [
@@ -137,7 +114,10 @@ const EXPANSION_NAMES = [
 			(card) =>
 				card.expansion === expansion &&
 				EXPANSIONS[expansion].disabled === false &&
-				!CONFIG.limits.bannedCards.includes(card.id),
+				!(
+					CONFIG.game.limits.bannedCards.includes(card.id) ||
+					CONFIG.game.limits.disabledCards.includes(card.id)
+				),
 		)
 	}),
 ]
@@ -254,7 +234,10 @@ const ALL_CARDS = sortCardInstances(
 		(card) =>
 			// Don't show disabled cards
 			EXPANSIONS[card.expansion].disabled === false &&
-			!CONFIG.limits.bannedCards.includes(card.id),
+			!(
+				CONFIG.game.limits.bannedCards.includes(card.id) ||
+				CONFIG.game.limits.disabledCards.includes(card.id)
+			),
 	).map(
 		(card): LocalCardInstance => ({
 			id: card.numericId,
@@ -343,10 +326,6 @@ function EditDeck({
 	const filteredCards: LocalCardInstance[] = sortCardInstances(
 		ALL_CARDS.filter((card_) => {
 			let card = CARDS[card_.id] as Card
-			let type =
-				isHermit(card) || (isItem(card) && card.type)
-					? (card.type as [string])
-					: null
 			return (
 				// Card Name Filter
 				card.name.toLowerCase().includes(deferredTextQuery.toLowerCase()) &&
@@ -354,9 +333,9 @@ function EditDeck({
 				(rankQuery === '' || getCardRank(card.tokens) === rankQuery) &&
 				// Card Type Filter
 				(typeQuery === '' ||
-					((isHermit(card) || isItem(card)) && card.type
-						? type?.includes(typeQuery)
-						: typeQuery == 'null')) &&
+					!(isHermit(card) || isItem(card)) ||
+					((isHermit(card) || isItem(card)) &&
+						card.type.includes(typeQuery))) &&
 				// Card Expansion Filter
 				(expansionQuery.length === 0 ||
 					expansionQuery.includes(card.expansion)) &&
@@ -365,6 +344,7 @@ function EditDeck({
 			)
 		}),
 	)
+
 	const selectedCards = {
 		hermits: loadedDeck.cards.filter(
 			(card) => CARDS[card.id].category === 'hermit',
@@ -674,7 +654,7 @@ function EditDeck({
 							<div className={css.dynamicSpace} />
 							<div className={css.deckDetails}>
 								<p className={classNames(css.cardCount, css.dark)}>
-									{loadedDeck.cards.length}/{CONFIG.limits.maxCards}
+									{loadedDeck.cards.length}/{CONFIG.game.limits.maxCards}
 									<span className={css.hideOnMobile}>cards</span>
 								</p>
 								<p
@@ -709,7 +689,7 @@ function EditDeck({
 									className={classNames(css.cardCount, css.dark, css.tokens)}
 								>
 									{getDeckCost(loadedDeck.cards.map((card) => CARDS[card.id]))}/
-									{CONFIG.limits.maxDeckCost}{' '}
+									{CONFIG.game.limits.maxDeckCost}{' '}
 									<span className={css.hideOnMobile}>tokens</span>
 								</div>
 							</div>
