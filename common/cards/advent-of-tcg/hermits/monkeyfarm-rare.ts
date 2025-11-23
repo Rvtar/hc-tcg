@@ -15,7 +15,7 @@ const MonkeyfarmRare: Hermit = {
 	id: 'monkeyfarm_rare',
 	numericId: 450,
 	name: 'Monkeyfarm',
-	expansion: 'hc_plus',
+	expansion: 'festive_fun',
 	palette: 'advent_of_tcg',
 	background: 'advent_of_tcg',
 

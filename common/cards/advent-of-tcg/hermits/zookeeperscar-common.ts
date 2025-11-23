@@ -7,7 +7,7 @@ const ZookeeperScarCommon: Hermit = {
 	numericId: 259,
 	name: 'Zookeeper Scar',
 	shortName: 'Zookeeper',
-	expansion: 'hc_plus',
+	expansion: 'festive_fun',
 	palette: 'advent_of_tcg_ii',
 	background: 'advent_of_tcg_ii',
 

@@ -11,7 +11,7 @@ const MinecartWithTNT: SingleUse = {
 	id: 'tnt_minecart',
 	numericId: 1397,
 	name: 'Minecart with TNT',
-	expansion: 'minecraft',
+	expansion: 'festive_fun',
 	rarity: 'rare',
 	tokens: 2,
 	description:

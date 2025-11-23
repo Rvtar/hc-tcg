@@ -33,7 +33,7 @@ const Allay: SingleUse = {
 	...singleUse,
 	id: 'allay',
 	name: 'Allay',
-	expansion: 'minecraft',
+	expansion: 'festive_fun',
 	numericId: 1396,
 	rarity: 'rare',
 	tokens: 1,

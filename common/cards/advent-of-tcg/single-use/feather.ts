@@ -7,7 +7,7 @@ const Feather: SingleUse = {
 	id: 'feather',
 	numericId: 199,
 	name: 'Feather',
-	expansion: 'minecraft',
+	expansion: 'festive_fun',
 	rarity: 'common',
 	tokens: 0,
 	description: 'Completely useless!\nNot allowed to be put in decks on its own',

@@ -9,7 +9,7 @@ const Lantern: SingleUse = {
 	id: 'lantern',
 	numericId: 510,
 	name: 'Lantern',
-	expansion: 'minecraft',
+	expansion: 'festive_fun',
 	rarity: 'rare',
 	tokens: 3,
 	description:

@@ -8,6 +8,7 @@ export type ExpansionT =
 	| 'item'
 	| 'default'
 	| 'alter_egos'
+	| 'festive_fun' // Advent
 	| 'beds'
 	| 'boss'
 	// Scuffed
@@ -24,6 +25,7 @@ export const EXPANSIONS: ExpansionDict = {
 	item: {name: 'Item', disabled: false},
 	default: {name: 'Hermitcraft', disabled: false},
 	alter_egos: {name: 'Alter Egos', disabled: false},
+	festive_fun: {name: 'Festive Fun', disabled: false},
 	beds: {name: 'Beds', disabled: true}, //@ScTODO Integrate into Minecraft
 	boss: {name: 'Boss', disabled: true},
 	bedrock_gang: {name: 'Bedrock Gang', disabled: false},

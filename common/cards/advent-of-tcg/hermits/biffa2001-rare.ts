@@ -24,7 +24,7 @@ const Biffa2001Rare: Hermit = {
 	id: 'biffa2001_rare',
 	numericId: 444,
 	name: 'Biffa',
-	expansion: 'hc_plus',
+	expansion: 'festive_fun',
 	palette: 'advent_of_tcg',
 	background: 'advent_of_tcg',
 

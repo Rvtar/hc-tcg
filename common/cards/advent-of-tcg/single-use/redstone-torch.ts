@@ -14,7 +14,7 @@ const RedstoneTorch: SingleUse = {
 	id: 'redstone_torch',
 	numericId: 1399,
 	name: 'Redstone Torch',
-	expansion: 'minecraft',
+	expansion: 'festive_fun',
 	rarity: 'rare',
 	tokens: 3,
 	description:

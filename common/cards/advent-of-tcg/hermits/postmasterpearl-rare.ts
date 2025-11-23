@@ -10,7 +10,7 @@ const PostmasterPearlRare: Hermit = {
 	numericId: 1405,
 	name: 'Postmaster Pearl',
 	shortName: 'Postmaster',
-	expansion: 'hc_plus',
+	expansion: 'festive_fun',
 	palette: 'advent_of_tcg_ii',
 	background: 'advent_of_tcg_ii',
 

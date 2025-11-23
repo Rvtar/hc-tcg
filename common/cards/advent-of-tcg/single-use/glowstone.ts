@@ -13,7 +13,7 @@ const Glowstone: SingleUse = {
 	id: 'glowstone',
 	numericId: 509,
 	name: 'Glowstone',
-	expansion: 'minecraft',
+	expansion: 'festive_fun',
 	rarity: 'rare',
 	tokens: 2,
 	description:

@@ -17,7 +17,7 @@ const DungeonTangoRare: Hermit = {
 	id: 'dungeontango_rare',
 	numericId: 445,
 	name: 'DM tango',
-	expansion: 'hc_plus',
+	expansion: 'festive_fun',
 	palette: 'advent_of_tcg',
 	background: 'advent_of_tcg',
 

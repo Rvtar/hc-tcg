@@ -16,7 +16,7 @@ const BigBSt4tzRare: Hermit = {
 	id: 'bigbst4tz2_rare',
 	numericId: 272,
 	name: 'BigB',
-	expansion: 'mcyt',
+	expansion: 'festive_fun',
 	palette: 'advent_of_tcg',
 	background: 'advent_of_tcg',
 

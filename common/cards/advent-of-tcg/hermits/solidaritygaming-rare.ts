@@ -16,7 +16,7 @@ const SolidaritygamingRare: Hermit = {
 	id: 'solidaritygaming_rare',
 	numericId: 274,
 	name: 'Jimmy',
-	expansion: 'mcyt',
+	expansion: 'festive_fun',
 	palette: 'advent_of_tcg',
 	background: 'advent_of_tcg',
 

@@ -15,7 +15,7 @@ const Cat: Attach = {
 	id: 'cat',
 	numericId: 505,
 	name: 'Cat',
-	expansion: 'minecraft',
+	expansion: 'festive_fun',
 
 	rarity: 'rare',
 	tokens: 1,

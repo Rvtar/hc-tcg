@@ -22,7 +22,7 @@ const PixlriffsRare: Hermit = {
 	id: 'pixlriffs_rare',
 	numericId: 215,
 	name: 'Pixl',
-	expansion: 'hc_plus',
+	expansion: 'festive_fun',
 	palette: 'advent_of_tcg',
 	background: 'advent_of_tcg',
 

@@ -16,7 +16,7 @@ const PowderSnowBucket: SingleUse = {
 	...singleUse,
 	id: 'powder_snow_bucket',
 	name: 'Powder Snow Bucket',
-	expansion: 'minecraft',
+	expansion: 'festive_fun',
 	numericId: 246,
 	rarity: 'rare',
 	tokens: 1,

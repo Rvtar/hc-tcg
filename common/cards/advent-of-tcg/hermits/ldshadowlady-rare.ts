@@ -16,7 +16,7 @@ const LDShadowLadyRare: Hermit = {
 	id: 'ldshadowlady_rare',
 	numericId: 324,
 	name: 'Lizzie',
-	expansion: 'mcyt',
+	expansion: 'festive_fun',
 	palette: 'advent_of_tcg',
 	background: 'advent_of_tcg',
 	rarity: 'rare',

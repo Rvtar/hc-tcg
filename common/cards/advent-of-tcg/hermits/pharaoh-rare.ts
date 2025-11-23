@@ -22,7 +22,7 @@ const PharaohRare: Hermit = {
 	id: 'pharaoh_rare',
 	numericId: 309,
 	name: 'Pharaoh',
-	expansion: 'hc_plus',
+	expansion: 'festive_fun',
 	palette: 'pharaoh',
 
 	rarity: 'rare',

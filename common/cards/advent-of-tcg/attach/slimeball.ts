@@ -13,7 +13,7 @@ const Slimeball: Attach = {
 
 	rarity: 'rare',
 	tokens: 0,
-	expansion: 'minecraft',
+	expansion: 'festive_fun',
 	description:
 		"Attach to any Hermit, including your opponent's. That Hermit and its attached items will not be removed from the slot they are attached to, unless that Hermit is knocked out. Attached cards cannot be removed until slimeball is discarded.",
 	attachCondition: query.every(

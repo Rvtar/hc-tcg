@@ -13,7 +13,7 @@ const ElderGuardian: Attach = {
 	...attach,
 	id: 'elder_guardian',
 	name: 'Elder Guardian',
-	expansion: 'minecraft',
+	expansion: 'festive_fun',
 
 	numericId: 1395,
 	rarity: 'rare',

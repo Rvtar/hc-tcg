@@ -19,7 +19,7 @@ const GrianchRare: Hermit = {
 	id: 'grianch_rare',
 	numericId: 463,
 	name: 'The Grianch',
-	expansion: 'hc_plus',
+	expansion: 'festive_fun',
 	palette: 'advent_of_tcg',
 	background: 'advent_of_tcg',
 
